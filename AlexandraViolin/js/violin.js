@@ -11,10 +11,10 @@ window.onscroll = function () {
         navigation.classList.add("navbar-small");
     }
     */
-    if (scrollTop >= (viewportHeight - 500)) {
+    if (scrollTop >= (viewportHeight - 500) && widthLarge) {
         navigation.classList.add("navbar-small");
     }
-    if (scrollTop < (viewportHeight - 500)) {
+    if (scrollTop < (viewportHeight - 500) && widthLarge) {
         navigation.classList.remove("navbar-small");
     }
 }

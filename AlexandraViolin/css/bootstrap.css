@@ -273,7 +273,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arciform, Georgia, "Times New Roman", Times, serif;
   font-size: 15px;
   line-height: 1.42857143;
   color: #777777;
@@ -362,8 +362,9 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 700;
+  /*font-family: "News Cycle", "Arial Narrow Bold", sans-serif;*/
+  font-family: CocaCola;
+  font-weight: 500;
   line-height: 1.1;
   color: #000000;
 }
@@ -2377,6 +2378,15 @@ input[type="button"].btn-block {
   font-family: 'Glyphicons Halflings';
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+@font-face {
+  font-family: CocaCola;
+  font-weight: 500;
+  src: url('../fonts/Coca-cola.otf');
+}
+@font-face {
+  font-family: Arciform;
+  src: url('../fonts/Arciform.otf');
 }
 .glyphicon {
   position: relative;
@@ -5706,12 +5716,14 @@ button.close {
 }
 .navbar {
   font-size: 18px;
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 700;
+  font-family: Arciform, "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: rgba(0,0,0,0.3) 1px 1px 2px;
 }
 .navbar-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
 }
 .navbar-small {
