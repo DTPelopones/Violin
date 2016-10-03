@@ -273,7 +273,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Arciform, Georgia, "Times New Roman", Times, serif;
   font-size: 15px;
   line-height: 1.42857143;
   color: #777777;
@@ -362,8 +362,9 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 700;
+  /*font-family: "News Cycle", "Arial Narrow Bold", sans-serif;*/
+  font-family: CocaCola;
+  font-weight: 500;
   line-height: 1.1;
   color: #000000;
 }
@@ -2378,6 +2379,15 @@ input[type="button"].btn-block {
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+@font-face {
+  font-family: CocaCola;
+  font-weight: 500;
+  src: url('../fonts/Coca-cola.otf');
+}
+@font-face {
+  font-family: Arciform;
+  src: url('../fonts/Arciform.otf');
+}
 .glyphicon {
   position: relative;
   top: 1px;
@@ -3642,6 +3652,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 60px;
   margin-bottom: 21px;
   /*border: 1px solid transparent;*/
+  transition: min-height .5s, font-size .3s linear;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -3740,6 +3751,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-size: 19px;
   line-height: 21px;
   height: 60px;
+  transition: .5s;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4036,12 +4048,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-nav > li > a {
   color: #ffffff;
+  transition: background .5s ease-in-out, padding .5s;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #ffffff;
   background-color: #e74b47;
-  transition: background .7s ease-in-out;
+  transition: background .5s ease-in-out;
 }
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
@@ -5703,13 +5716,29 @@ button.close {
 }
 .navbar {
   font-size: 18px;
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 700;
+  font-family: Arciform, "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: rgba(0,0,0,0.3) 1px 1px 2px;
 }
 .navbar-brand {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
+}
+.navbar-small {
+    min-height: 42px;
+    font-size: 14px;
+}
+
+.navbar-small .navbar-brand {
+    padding: 10.5px 15px;
+    height: 42px;
+}
+
+.navbar-small .navbar-nav > li > a {
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
 }
 .has-warning .help-block,
 .has-warning .control-label {
