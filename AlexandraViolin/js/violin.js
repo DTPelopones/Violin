@@ -1,20 +1,25 @@
-﻿var navigation = document.querySelector('.navbar'),
-	pageHeight = document.documentElement.scrollHeight,
-	offsetWidth = document.documentElement.offsetWidth,
-	viewportHeight = document.documentElement.clientHeight;
+﻿$(document).ready(function () {
+    var activeHeight = 450,
+        navbar = $('.navbar'),
+        navBrand = $('.navbar-brand'),
+        navItem = $('.navbar-nav a'),
+        padding = 9.5,
+        fontSize = 16;
+        
+    $(window).scroll(function () {
+        var screenWidth = $(window).width();
+        if (screenWidth > 767) {
+            var topHeight = activeHeight - $(document).scrollTop(),
+                scale = topHeight / activeHeight,
+                currPadding = padding,
+                currFontSize = fontSize;
 
-window.onscroll = function () {
-    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop,
-        widthLarge = offsetWidth >= 1200 || false;
-    /*
-    if ((scrollTop >= (viewportHeight / 2)) && widthLarge) {
-        navigation.classList.add("navbar-small");
-    }
-    */
-    if (scrollTop >= (viewportHeight - 500) && widthLarge) {
-        navigation.classList.add("navbar-small");
-    }
-    if (scrollTop < (viewportHeight - 500) && widthLarge) {
-        navigation.classList.remove("navbar-small");
-    }
-}
+            if (scale > 0) {
+                currPadding = (padding + (scale * 10)) + 'px';
+                currFontSize = (fontSize + (scale * 2)) + 'px';
+            }
+            navItem.css({ 'padding-top': currPadding, 'padding-bottom': currPadding, 'font-size': currFontSize });
+            navBrand.css({ 'padding-top': currPadding, 'padding-bottom': currPadding });
+        }
+    });
+});
