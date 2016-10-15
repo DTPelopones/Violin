@@ -6,7 +6,7 @@ namespace AlexandraViolin.Controllers
 {
     
     
-    public class PortfolioController : Controller
+    public class PortfolioController : BaseController
     {
         
         public ActionResult OneColumn()
@@ -21,6 +21,8 @@ namespace AlexandraViolin.Controllers
 
         public ActionResult ThreeColumn()
         {
+            ViewBag.controller = "Portfolio";
+            ViewBag.action = "ThreeColumn";
             return View();
         }
     }

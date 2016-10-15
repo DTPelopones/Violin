@@ -1,4 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@helper IsMenuSelected(string actionName, string controllerName, string className)
+{
+    var conname = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var actname = ViewContext.RouteData.Values["action"].ToString().ToLower();
+
+    if (conname == controllerName.ToLower() && actname == actionName.ToLower())
+    {
+            @className;
+    }
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,6 +23,12 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
 </head>
 <body>
 
@@ -26,34 +42,34 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                @Html.ActionLink("АЛЕКСАНДРА", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("ALEXANDRA", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="about">
+                    <li id="about" class="@IsMenuSelected("Index","About", "active")">
                        @Html.ActionLink("БИОГРАФИЯ", "Index", "About")
                     </li>
-                    <li id="services">
+                    <li id="services" class="@IsMenuSelected("Index","Services", "active")">
                         @Html.ActionLink("КАЛЕНДАРЬ", "Index", "Services")
                     </li>
-                    <li id="contact">
+                    <li id="contact" class="@IsMenuSelected("Index","Contact", "active")">
                         @Html.ActionLink("КОНТАКТЫ", "Index", "Contact")
                     </li>
-                    <li id="3columnportfolio">
+                    <li id="3columnportfolio" class="@IsMenuSelected("ThreeColumn","Portfolio", "active")">
                         @Html.ActionLink("МЕДИА", "ThreeColumn", "Portfolio")
                     </li>
-                    <li id="bloghome1">
+                    <li id="bloghome1" class="@IsMenuSelected("Home1","Blog", "active")">
                         @Html.ActionLink("НОВОСТИ", "Home1", "Blog")
                     </li>
-                    <li id="bloghome2">
+                    <li id="bloghome2" class="@IsMenuSelected("Home2","Blog", "active")">
                         @Html.ActionLink("ФОРУМ", "Home2", "Blog")
                     </li>
-                    <li id="lessons">
+                    <li id="lessons" class="@IsMenuSelected("Index","Lessons", "active")">
                         @Html.ActionLink("УРОКИ", "Index", "Lessons")
                     </li>
-                    <li id="faq">
+                    <li id="faq" class="@IsMenuSelected("Index","Faq", "active")">
                         @Html.ActionLink("ВОПРОСЫ", "Faq", "Other")
                     </li>
                     @*<li id="portfolio" class="dropdown">
@@ -109,22 +125,22 @@
 
     @RenderBody()
 
-    <div class="container">
+    @*<div class="container">
 
         <hr>
 
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Company 2016</p>
+                    <p>Copyright &copy; @DateTime.Now.Year</p>
                 </div>
             </div>
         </footer>
 
-    </div>
+    </div>*@
     <!-- /.container -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>*@
     <script src="@Url.Content("/js/bootstrap.js")"></script>
     @*<script src="@Url.Content("/js/modern-business.js")"></script>*@
     <script src="@Url.Content("/js/violin.js")"></script>

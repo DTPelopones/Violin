@@ -6,7 +6,7 @@ namespace AlexandraViolin.Controllers
 {
     
     
-    public class OtherController : Controller
+    public class OtherController : BaseController
     {
         
         public ActionResult FullWidth()
@@ -21,6 +21,8 @@ namespace AlexandraViolin.Controllers
         
         public ActionResult Faq()
         {
+            ViewBag.controller = "Other";
+            ViewBag.action = "Faq";
             return View();
         }
         

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Violin.Domain;
+using Ninject; 
 
 namespace AlexandraViolin.Controllers
 {
-    public class HomeController : BaseController
+    public abstract class BaseController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+        [Inject]
+        public IRepository repository { get; set; }
     }
 }

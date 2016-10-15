@@ -1,0 +1,37 @@
+﻿@model Violin.Domain.Account
+
+@using (Ajax.BeginForm("Login", "Account",
+                             new AjaxOptions
+                             {
+                                 HttpMethod = "POST",
+                                 UpdateTargetId = "dvLogin",
+                                 InsertionMode = InsertionMode.Replace
+                             }))
+{
+    <table>
+        @if (Session["AccountID"] == null)
+        {
+            <tr>
+                <td> @Html.Label("Email: ") </td>
+                <td> &thinsp;</td>
+                <td>@Html.TextBoxFor(a => a.email, new { @class = "form-control text-danger" })</td>
+                <td>&emsp;</td>
+                <td>@Html.Label("Пароль: ")</td>
+                <td>&thinsp;</td>
+                <td>@Html.PasswordFor(a => a.password_hash, new { @class = "form-control" })</td>
+                <td>&thinsp;</td>
+                <td><input type="submit" value="Login" class="btn btn-primary" /></td>
+            </tr>
+        }
+        else
+        {
+            <tr>
+                <td>@Html.Label("Name: ")</td>
+                <td>&thinsp;</td>
+                <td>@Session["AccountName"]</td>
+                <td>&emsp;</td>
+            </tr>
+        }
+    </table>
+    @Html.ValidationMessageFor(a => a.email, "", new { @class = "text-danger" })
+}
