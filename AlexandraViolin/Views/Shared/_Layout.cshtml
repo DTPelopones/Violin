@@ -1,11 +1,9 @@
 ﻿@helper IsMenuSelected(string actionName, string controllerName, string className)
 {
     var conname = ViewContext.RouteData.Values["controller"].ToString().ToLower();
-    var actname = ViewContext.RouteData.Values["action"].ToString().ToLower();
-
-    if (conname == controllerName.ToLower() && actname == actionName.ToLower())
+    if (conname == controllerName.ToLower())
     {
-            @className;
+        @className;
     }
 }
 <!DOCTYPE html>
@@ -17,17 +15,22 @@
     <title>Modern Business - @ViewBag.Title</title>
 
     <!-- Bootstrap -->
-    <link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet">
-    <link href="@Url.Content("/css/modern-business.css")" rel="stylesheet">
+    @*<link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet">*@
+    @*<link href="@Url.Content("/css/modern-business.css")" rel="stylesheet">*@
+
+    @Styles.Render("~/css") 
+
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 
     <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+
+    @Scripts.Render("~/bundles/jqueryajaxvalidate") 
 
 </head>
 <body>
@@ -48,41 +51,41 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li id="about" class="@IsMenuSelected("Index","About", "active")">
-                       @Html.ActionLink("БИОГРАФИЯ", "Index", "About")
+                    <li id="biography" class="@IsMenuSelected("Index", "Biography", "active")">
+                       @Html.ActionLink("БИОГРАФИЯ", "Index", "Biography")
                     </li>
-                    <li id="services" class="@IsMenuSelected("Index","Services", "active")">
-                        @Html.ActionLink("КАЛЕНДАРЬ", "Index", "Services")
+                    <li id="calendar" class="@IsMenuSelected("Index", "Calendar", "active")">
+                        @Html.ActionLink("КАЛЕНДАРЬ", "Index", "Calendar")
                     </li>
-                    <li id="contact" class="@IsMenuSelected("Index","Contact", "active")">
+                    <li id="contact" class="@IsMenuSelected("Index", "Contact", "active")">
                         @Html.ActionLink("КОНТАКТЫ", "Index", "Contact")
                     </li>
-                    <li id="3columnportfolio" class="@IsMenuSelected("ThreeColumn","Portfolio", "active")">
-                        @Html.ActionLink("МЕДИА", "ThreeColumn", "Portfolio")
+                    <li id="Media" class="@IsMenuSelected("Index", "Media", "active")">
+                        @Html.ActionLink("МЕДИА", "Index", "Media")
                     </li>
-                    <li id="bloghome1" class="@IsMenuSelected("Home1","Blog", "active")">
-                        @Html.ActionLink("НОВОСТИ", "Home1", "Blog")
+                    <li id="news" class="@IsMenuSelected("Index", "News", "active")">
+                        @Html.ActionLink("НОВОСТИ", "Index", "News")
                     </li>
-                    <li id="bloghome2" class="@IsMenuSelected("Home2","Blog", "active")">
-                        @Html.ActionLink("ФОРУМ", "Home2", "Blog")
+                    <li id="forum" class="@IsMenuSelected("Index", "Forum", "active")">
+                        @Html.ActionLink("ФОРУМ", "Index", "Forum")
                     </li>
-                    <li id="lessons" class="@IsMenuSelected("Index","Lessons", "active")">
-                        @Html.ActionLink("УРОКИ", "Index", "Lessons")
+                    <li id="lessons" class="@IsMenuSelected("Index", "Lessons", "active")">
+                        @Html.ActionLink("ОБУЧЕНИЕ", "Index", "Lessons")
                     </li>
-                    <li id="faq" class="@IsMenuSelected("Index","Faq", "active")">
-                        @Html.ActionLink("ВОПРОСЫ", "Faq", "Other")
+                    <li id="faq" class="@IsMenuSelected("Index", "Faq", "active")">
+                        @Html.ActionLink("ВОПРОСЫ", "Index", "Faq")
                     </li>
-                    @*<li id="portfolio" class="dropdown">
+                    @*<li id="Media" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li id="1columnportfolio">
-                                @Html.ActionLink("1 Column Portfolio", "OneColumn", "Portfolio")
+                                @Html.ActionLink("1 Column Portfolio", "OneColumn", "Media")
                             </li>
                             
                             
                             
                             <li id="singleportfolioitem">
-                                @Html.ActionLink("Single Portfolio Item", "SingleItem", "Portfolio")
+                                @Html.ActionLink("Single Portfolio Item", "SingleItem", "Media")
                             </li>
                         </ul>
                     </li>*@
@@ -141,8 +144,10 @@
     <!-- /.container -->
 
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>*@
-    <script src="@Url.Content("/js/bootstrap.js")"></script>
+    @*<script src="@Url.Content("/js/bootstrap.js")"></script>*@
     @*<script src="@Url.Content("/js/modern-business.js")"></script>*@
-    <script src="@Url.Content("/js/violin.js")"></script>
+    @*<script src="@Url.Content("/js/violin.js")"></script>*@
+
+    @Scripts.Render("~/bundles/bootstrapviolin") 
 </body>
 </html>

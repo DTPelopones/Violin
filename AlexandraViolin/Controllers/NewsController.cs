@@ -2,13 +2,16 @@
 
 namespace AlexandraViolin.Controllers
 {
-    public class AboutController : BaseController
+    public class NewsController : BaseController
     {
         public ActionResult Index()
         {
-            ViewBag.controller = "About";
-            ViewBag.action = "Index";
             return View();
         }
-	}
+
+        public ActionResult Post()
+        {
+            return View();
+        }
+    }
 }

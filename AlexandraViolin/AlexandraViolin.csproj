@@ -171,20 +171,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BiographyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LessonsController.cs" />
-    <Compile Include="Controllers\OtherController.cs" />
-    <Compile Include="Controllers\PortfolioController.cs" />
-    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\FaqController.cs" />
+    <Compile Include="Controllers\MediaController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,6 +240,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Lessons\Login.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\News\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />
@@ -256,43 +259,43 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Biography\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Portfolio\OneColumn.cshtml" />
+    <Content Include="Views\Media\OneColumn.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Portfolio\SingleItem.cshtml" />
+    <Content Include="Views\Media\SingleItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Blog\Home1.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Blog\Post.cshtml" />
+    <Content Include="Views\Forum\Post.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Other\FullWidth.cshtml" />
+    <Content Include="Views\Faq\FullWidth.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Other\SideBar.cshtml" />
+    <Content Include="Views\Faq\SideBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Other\Faq.cshtml" />
+    <Content Include="Views\Faq\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Other\FourOhFour.cshtml" />
+    <Content Include="Views\Faq\FourOhFour.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Portfolio\ThreeColumn.cshtml" />
+    <Content Include="Views\Media\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Blog\Home2.cshtml" />
+    <Content Include="Views\Forum\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Lessons\Index.cshtml" />

@@ -1,14 +1,9 @@
-﻿
-using System.Web.Mvc;
-
+﻿using System.Web.Mvc;
 
 namespace AlexandraViolin.Controllers
 {
-    
-    
-    public class OtherController : BaseController
+    public class FaqController : BaseController
     {
-        
         public ActionResult FullWidth()
         {
             return View();
@@ -19,10 +14,8 @@ namespace AlexandraViolin.Controllers
             return View();
         }
         
-        public ActionResult Faq()
+        public ActionResult Index()
         {
-            ViewBag.controller = "Other";
-            ViewBag.action = "Faq";
             return View();
         }
         

@@ -6,8 +6,6 @@ namespace AlexandraViolin.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.controller = "Contact";
-            ViewBag.action = "Index";
             return View();
         }
 	}

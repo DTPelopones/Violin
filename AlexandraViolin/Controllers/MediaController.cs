@@ -1,14 +1,9 @@
-﻿
-using System.Web.Mvc;
-
+﻿using System.Web.Mvc;
 
 namespace AlexandraViolin.Controllers
 {
-    
-    
-    public class PortfolioController : BaseController
+    public class MediaController : BaseController
     {
-        
         public ActionResult OneColumn()
         {
             return View();
@@ -19,11 +14,9 @@ namespace AlexandraViolin.Controllers
             return View();
         }
 
-        public ActionResult ThreeColumn()
+        public ActionResult Index()
         {
-            ViewBag.controller = "Portfolio";
-            ViewBag.action = "ThreeColumn";
-            return View();
+            return View(); 
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace AlexandraViolin.Controllers
 {
-    public class LessonsController : BaseController
+    public class BiographyController : BaseController
     {
         public ActionResult Index()
         {

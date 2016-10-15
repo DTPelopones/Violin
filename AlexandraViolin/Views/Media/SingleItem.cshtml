@@ -1,18 +1,21 @@
 ﻿@{
-    ViewBag.Title = "Single Portfolio Item";
+    ViewBag.Title = "Item";
 }
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                Single Portfolio Item
+                Item
                 <small>Explain Your Work</small>
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    @Html.ActionLink("Home", "Index", "Home")
+                    @Html.ActionLink("Главная", "Index", "Home")
                 </li>
-                <li class="active">Single Portfolio Item</li>
+                <li>
+                    @Html.ActionLink("Медиа", "Index", "Media")
+                </li>
+                <li class="active">Элемент</li>
             </ol>
         </div>
     </div>
