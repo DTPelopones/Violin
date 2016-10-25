@@ -24,10 +24,10 @@ namespace AlexandraViolin
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryajaxvalidate").Include( 
-                        "~/Scripts/jquery-1.10.2.min.js", 
-                        "~/Scripts/jquery.unobtrusive-ajax.min.js", 
-                        "~/Scripts/jquery.validate.min.js", 
-                        "~/Scripts/jquery.validate.unobstrusive.min.js" 
+                        "~/Scripts/jquery-1.10.2.min.js",
+                        "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                        "~/Scripts/jquery.validate.min.js",
+                        "~/Scripts/jquery.validate.unobtrusive.min.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapviolin").Include(
@@ -35,9 +35,18 @@ namespace AlexandraViolin
                         "~/js/violin.js"
                         ));
 
+            //bundles.Add(new ScriptBundle("~/bundles/pageInfinity").Include(
+            //        "~/js/pageInfinity.js"
+            //        ));
+
             bundles.Add(new StyleBundle("~/css").Include(
                       "~/css/bootstrap.css",
-                      "~/css/modern-business.css"
+                      "~/css/modern-business.css",
+                      "~/css/font-awesome.min.css",
+                      "~/css/bootstrap-social.css"
+                      ));
+            bundles.Add(new StyleBundle("~/css/violin").Include(
+                      "~/css/violin.css"
                       ));
         }
     }

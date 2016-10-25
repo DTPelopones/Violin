@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Violin.Domain.Photo> 
+
+@{
+    ViewBag.Title = "PhotoPart";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Фото
+                <small>галлерея</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li>
+                    @Html.ActionLink("Главная", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Медиа", "Index", "Mediya")
+                </li>
+                <li class="active">@Model.First().album</li>
+            </ol>
+        </div>
+    </div>
+
+    <div id="photopart">
+        @Html.Partial("PhotoPart", Model)
+    </div>
+    <hr>
+    <div id="loadPartPhoto" style="display: none">
+        <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
+    </div>
+</div>
+
+<script type="text/javascript">
+var pageNo = 0;
+var isPageLoad = false;
+
+$(window).scroll(function () {
+        if($(window).scrollTop() == $(document).height() - $(window).height())
+        {
+            if (pageNo > -1 && !isPageLoad) {
+                isPageLoad = true;
+                pageNo++;
+                var alb = "@ViewBag.album";
+                $.ajax({
+                    url: 'Photo',
+                    data: { 'page': pageNo, 'album': alb },
+                    success: function (data) {
+                        if (data != '') {
+                            $('#photopart').append(data);     
+                        }
+                        else {
+                            pageNo = -1; 
+                        }
+                        $("#loadPartPhoto").hide();
+                        isPageLoad = false;
+                    }
+                });
+
+            }
+        }
+});
+</script>

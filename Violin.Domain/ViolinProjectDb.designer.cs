@@ -20,8 +20,9 @@ namespace Violin.Domain
 	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
-
-    [global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AlexandraViolin")]
+	
+	
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AlexandraViolin")]
 	public partial class LessonDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -47,6 +48,9 @@ namespace Violin.Domain
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
+    partial void InsertPhoto(Photo instance);
+    partial void UpdatePhoto(Photo instance);
+    partial void DeletePhoto(Photo instance);
     #endregion
 		
 		public LessonDataContext() : 
@@ -124,6 +128,14 @@ namespace Violin.Domain
 			get
 			{
 				return this.GetTable<Account>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Photo> Photo
+		{
+			get
+			{
+				return this.GetTable<Photo>();
 			}
 		}
 	}
@@ -1345,7 +1357,7 @@ namespace Violin.Domain
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-        public string email
+		public string email
 		{
 			get
 			{
@@ -1420,6 +1432,308 @@ namespace Violin.Domain
 					this._inputDate = value;
 					this.SendPropertyChanged("inputDate");
 					this.OninputDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Photo")]
+	public partial class Photo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID;
+		
+		private string _name;
+		
+		private string _path;
+		
+		private string _type;
+		
+		private System.Nullable<System.TimeSpan> _movieTime;
+		
+		private System.DateTime _inputDate;
+		
+		private string _description;
+		
+		private string _album;
+		
+		private string _pathm;
+		
+		private string _sizem;
+		
+		private string _size;
+		
+    #region Определения метода расширяемости
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDChanging(int value);
+    partial void OnIDChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnpathChanging(string value);
+    partial void OnpathChanged();
+    partial void OntypeChanging(string value);
+    partial void OntypeChanged();
+    partial void OnmovieTimeChanging(System.Nullable<System.TimeSpan> value);
+    partial void OnmovieTimeChanged();
+    partial void OninputDateChanging(System.DateTime value);
+    partial void OninputDateChanged();
+    partial void OndescriptionChanging(string value);
+    partial void OndescriptionChanged();
+    partial void OnalbumChanging(string value);
+    partial void OnalbumChanged();
+    partial void OnpathmChanging(string value);
+    partial void OnpathmChanged();
+    partial void OnsizemChanging(string value);
+    partial void OnsizemChanged();
+    partial void OnsizeChanging(string value);
+    partial void OnsizeChanged();
+    #endregion
+		
+		public Photo()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this.OnIDChanging(value);
+					this.SendPropertyChanging();
+					this._ID = value;
+					this.SendPropertyChanged("ID");
+					this.OnIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(250)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_path", DbType="NVarChar(256) NOT NULL", CanBeNull=false)]
+		public string path
+		{
+			get
+			{
+				return this._path;
+			}
+			set
+			{
+				if ((this._path != value))
+				{
+					this.OnpathChanging(value);
+					this.SendPropertyChanging();
+					this._path = value;
+					this.SendPropertyChanged("path");
+					this.OnpathChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_type", DbType="VarChar(5)")]
+		public string type
+		{
+			get
+			{
+				return this._type;
+			}
+			set
+			{
+				if ((this._type != value))
+				{
+					this.OntypeChanging(value);
+					this.SendPropertyChanging();
+					this._type = value;
+					this.SendPropertyChanged("type");
+					this.OntypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_movieTime", DbType="Time")]
+		public System.Nullable<System.TimeSpan> movieTime
+		{
+			get
+			{
+				return this._movieTime;
+			}
+			set
+			{
+				if ((this._movieTime != value))
+				{
+					this.OnmovieTimeChanging(value);
+					this.SendPropertyChanging();
+					this._movieTime = value;
+					this.SendPropertyChanged("movieTime");
+					this.OnmovieTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_inputDate", DbType="DateTime NOT NULL")]
+		public System.DateTime inputDate
+		{
+			get
+			{
+				return this._inputDate;
+			}
+			set
+			{
+				if ((this._inputDate != value))
+				{
+					this.OninputDateChanging(value);
+					this.SendPropertyChanging();
+					this._inputDate = value;
+					this.SendPropertyChanged("inputDate");
+					this.OninputDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_description", DbType="NVarChar(255)")]
+		public string description
+		{
+			get
+			{
+				return this._description;
+			}
+			set
+			{
+				if ((this._description != value))
+				{
+					this.OndescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._description = value;
+					this.SendPropertyChanged("description");
+					this.OndescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_album", DbType="NVarChar(100)")]
+		public string album
+		{
+			get
+			{
+				return this._album;
+			}
+			set
+			{
+				if ((this._album != value))
+				{
+					this.OnalbumChanging(value);
+					this.SendPropertyChanging();
+					this._album = value;
+					this.SendPropertyChanged("album");
+					this.OnalbumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pathm", DbType="NVarChar(256)")]
+		public string pathm
+		{
+			get
+			{
+				return this._pathm;
+			}
+			set
+			{
+				if ((this._pathm != value))
+				{
+					this.OnpathmChanging(value);
+					this.SendPropertyChanging();
+					this._pathm = value;
+					this.SendPropertyChanged("pathm");
+					this.OnpathmChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sizem", DbType="VarChar(9)")]
+		public string sizem
+		{
+			get
+			{
+				return this._sizem;
+			}
+			set
+			{
+				if ((this._sizem != value))
+				{
+					this.OnsizemChanging(value);
+					this.SendPropertyChanging();
+					this._sizem = value;
+					this.SendPropertyChanged("sizem");
+					this.OnsizemChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_size", DbType="VarChar(9)")]
+		public string size
+		{
+			get
+			{
+				return this._size;
+			}
+			set
+			{
+				if ((this._size != value))
+				{
+					this.OnsizeChanging(value);
+					this.SendPropertyChanging();
+					this._size = value;
+					this.SendPropertyChanged("size");
+					this.OnsizeChanged();
 				}
 			}
 		}

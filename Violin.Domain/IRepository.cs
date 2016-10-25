@@ -50,6 +50,18 @@ namespace Violin.Domain
 
         #endregion
 
+        #region Photo
+
+        IQueryable<Photo> Photo { get; }
+
+        bool CreatePhoto(Photo instance);
+
+        bool UpdatePhoto(Photo instance);
+
+        bool RemovePhoto(int idPhoto);
+
+        #endregion
+
         #region Plan
 
         IQueryable<Plan> Plan { get; }

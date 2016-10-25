@@ -65,4 +65,19 @@
       <Column Name="inputDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.Photo" Member="Photo">
+    <Type Name="Photo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="path" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="type" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="movieTime" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="inputDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="album" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pathm" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="sizem" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="size" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

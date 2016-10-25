@@ -45,36 +45,39 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                @Html.ActionLink("ALEXANDRA", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("AF", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li id="biography" class="@IsMenuSelected("Index", "Biography", "active")">
-                       @Html.ActionLink("БИОГРАФИЯ", "Index", "Biography")
+                       @Html.ActionLink("ОБО МНЕ", "Index", "Biography")
                     </li>
-                    <li id="calendar" class="@IsMenuSelected("Index", "Calendar", "active")">
-                        @Html.ActionLink("КАЛЕНДАРЬ", "Index", "Calendar")
+                    <li id="afisha" class="@IsMenuSelected("Index", "Afisha", "active")">
+                        @Html.ActionLink("АФИША", "Index", "Afisha")
                     </li>
-                    <li id="contact" class="@IsMenuSelected("Index", "Contact", "active")">
-                        @Html.ActionLink("КОНТАКТЫ", "Index", "Contact")
+                    <li id="orchestra" class="@IsMenuSelected("Index", "Orchestra", "active")">
+                        @Html.ActionLink("ОРКЕСТР", "Index", "Orchestra")
                     </li>
-                    <li id="Media" class="@IsMenuSelected("Index", "Media", "active")">
-                        @Html.ActionLink("МЕДИА", "Index", "Media")
+                    <li id="mediya" class="@IsMenuSelected("Index", "Mediya", "active")">
+                        @Html.ActionLink("МЕДИА", "Index", "Mediya")
                     </li>
                     <li id="news" class="@IsMenuSelected("Index", "News", "active")">
                         @Html.ActionLink("НОВОСТИ", "Index", "News")
                     </li>
-                    <li id="forum" class="@IsMenuSelected("Index", "Forum", "active")">
+                    @*<li id="forum" class="@IsMenuSelected("Index", "Forum", "active")">
                         @Html.ActionLink("ФОРУМ", "Index", "Forum")
-                    </li>
+                    </li>*@
                     <li id="lessons" class="@IsMenuSelected("Index", "Lessons", "active")">
-                        @Html.ActionLink("ОБУЧЕНИЕ", "Index", "Lessons")
+                        @Html.ActionLink("УРОКИ", "Index", "Lessons")
                     </li>
-                    <li id="faq" class="@IsMenuSelected("Index", "Faq", "active")">
+                    <li id="contact" class="@IsMenuSelected("Index", "Contact", "active")">
+                        @Html.ActionLink("КОНТАКТЫ", "Index", "Contact")
+                    </li>
+                    @*<li id="faq" class="@IsMenuSelected("Index", "Faq", "active")">
                         @Html.ActionLink("ВОПРОСЫ", "Index", "Faq")
-                    </li>
+                    </li>*@
                     @*<li id="Media" class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
                         <ul class="dropdown-menu">

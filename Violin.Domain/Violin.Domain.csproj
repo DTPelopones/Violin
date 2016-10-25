@@ -87,6 +87,7 @@
     <Compile Include="SqlRepository\Account.cs" />
     <Compile Include="SqlRepository\Material.cs" />
     <Compile Include="SqlRepository\Method.cs" />
+    <Compile Include="SqlRepository\Photo.cs" />
     <Compile Include="SqlRepository\Plan.cs" />
     <Compile Include="SqlRepository\Video.cs" />
     <Compile Include="ViolinProjectDb.designer.cs">

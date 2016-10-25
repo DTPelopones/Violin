@@ -12,8 +12,8 @@
         @if (Session["AccountID"] == null)
         {
             <tr>
-                <td> @Html.Label("Email: ") </td>
-                <td> &thinsp;</td>
+                <td>@Html.Label("Email: ") </td>
+                <td>&thinsp;</td>
                 <td>@Html.TextBoxFor(a => a.email, new { @class = "form-control text-danger" })</td>
                 <td>&emsp;</td>
                 <td>@Html.Label("Пароль: ")</td>
@@ -28,8 +28,8 @@
             <tr>
                 <td>@Html.Label("Name: ")</td>
                 <td>&thinsp;</td>
-                <td>@Session["AccountName"]</td>
-                <td>&emsp;</td>
+                <td>@Html.Label(@Session["AccountName"].ToString())</td>
+                @*<td>&emsp;</td>*@
             </tr>
         }
     </table>
