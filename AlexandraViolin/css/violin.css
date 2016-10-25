@@ -28,7 +28,7 @@ header {
 	float: left;
 	width: 14.342%;
 	padding: 5px;
-	box-sizing:border-box;
+	box-sizing: border-box;
 	border: 1px solid #ccc;
 	margin-right: -1px;
 	margin-bottom: -1px;
@@ -145,4 +145,8 @@ header {
 	#calendar .date {
 		float: none;
 	}
+
+    #calendar .dayday {
+	    width: 100%;
+    }
 }
