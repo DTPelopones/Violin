@@ -466,6 +466,7 @@
     <Content Include="Views\Orchestra\OrchestraPart.cshtml" />
     <Content Include="Views\Lessons\LessonPart.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Error\Forbidden.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />
