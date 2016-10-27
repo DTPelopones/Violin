@@ -50,6 +50,15 @@ header {
     height: 180px;
 }
 
+.dayday:hover {
+    background-color: #dddddd;
+}
+
+/*a:hover, a:focus {
+    color: #8a989a;
+    text-decoration: underline;
+}*/
+
 #calendar ul.weekdays {
 	height: 40px;
 	background: #8e352e;

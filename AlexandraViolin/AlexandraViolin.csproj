@@ -179,6 +179,7 @@
     <Compile Include="Controllers\BiographyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -464,6 +465,7 @@
     <Content Include="Views\Mediya\Video.cshtml" />
     <Content Include="Views\Orchestra\OrchestraPart.cshtml" />
     <Content Include="Views\Lessons\LessonPart.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />
