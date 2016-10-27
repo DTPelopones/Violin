@@ -22,4 +22,14 @@
             navBrand.css({ 'padding-top': currPadding, 'padding-bottom': currPadding });
         }
     });
+
+    $('#mediaTab a').click(function (e) {
+        var href = $(this).attr('href');
+        sessionStorage.setItem('activeTab', href);
+    });
+    
+    if (sessionStorage.getItem('activeTab')) {
+        var href = sessionStorage.getItem('activeTab');
+        $('#mediaTab a[href="' + href + '"]').tab('show');
+    }
 });
