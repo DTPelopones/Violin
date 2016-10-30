@@ -5,12 +5,14 @@
 <script src="~/PhotoSwipe/photoswipe.min.js"></script>
 <script src="~/PhotoSwipe/photoswipe-ui-default.min.js"></script>
 
+@Styles.Render("~/css/violin")
+
 <div class="row">
     <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
         @foreach (var photo in Model)
         {
-            <a href="@photo.path" data-size="@photo.size" data-med="@photo.pathm" data-med-size="@photo.sizem" class="col-sm-4">@*class="demo-gallery__img--main"*@
-            <img src="@photo.pathm" class="img-responsive" alt="">
+            <a href="@photo.path" data-size="@photo.size" data-med="@photo.pathm" data-med-size="@photo.sizem" class="col-sm-5 cropOrchestra">@*class="demo-gallery__img--main"*@
+            <img src="@photo.pathm" class="crop" alt=""> @*class="img-responsive"*@
         </a>
         }
     </div>
@@ -50,15 +52,8 @@
                 </div>
             </div>
 
-
-            <!-- <div class="pswp__loading-indicator"><div class="pswp__loading-indicator__line"></div></div> -->
-
             <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
                 <div class="pswp__share-tooltip">
-                    <!-- <a href="#" class="pswp__share--facebook"></a>
-                    <a href="#" class="pswp__share--twitter"></a>
-                    <a href="#" class="pswp__share--pinterest"></a>
-                    <a href="#" download class="pswp__share--download"></a> -->
                 </div>
             </div>
 
@@ -93,7 +88,7 @@
 			    for(var i = 0; i < numNodes; i++) {
 			        el = thumbElements[i];
 
-			        // include only element nodes
+			        
 			        if(el.nodeType !== 1) {
 			          continue;
 			        }
@@ -102,7 +97,7 @@
 
 			        size = el.getAttribute('data-size').split('x');
 
-			        // create slide object
+			        
 			        item = {
 						src: el.getAttribute('href'),
 						w: parseInt(size[0], 10),
@@ -110,12 +105,12 @@
 						author: el.getAttribute('data-author')
 			        };
 
-			        item.el = el; // save link to element for getThumbBoundsFn
+			        item.el = el; 
 
 			        if(childElements.length > 0) {
-			          item.msrc = childElements[0].getAttribute('src'); // thumbnail url
+			          item.msrc = childElements[0].getAttribute('src'); 
 			          if(childElements.length > 1) {
-			              item.title = childElements[1].innerHTML; // caption (contents of figure)
+			              item.title = childElements[1].innerHTML; 
 			          }
 			        }
 
@@ -123,14 +118,14 @@
 					var mediumSrc = el.getAttribute('data-med');
 		          	if(mediumSrc) {
 		            	size = el.getAttribute('data-med-size').split('x');
-		            	// "medium-sized" image
+
 		            	item.m = {
 		              		src: mediumSrc,
 		              		w: parseInt(size[0], 10),
 		              		h: parseInt(size[1], 10)
 		            	};
 		          	}
-		          	// original image
+
 		          	item.o = {
 		          		src: item.src,
 		          		w: item.w,
@@ -143,7 +138,6 @@
 			    return items;
 			};
 
-			// find nearest parent element
 			var closest = function closest(el, fn) {
 			    return el && ( fn(el) ? el : closest(el.parentNode, fn) );
 			};
@@ -191,7 +185,7 @@
 				var hash = window.location.hash.substring(1),
 			    params = {};
 
-			    if(hash.length < 5) { // pid=1
+			    if(hash.length < 5) { 
 			        return params;
 			    }
 
@@ -222,13 +216,12 @@
 
 				items = parseThumbnailElements(galleryElement);
 
-			    // define options (if needed)
 			    options = {
 
 			        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
 			        getThumbBoundsFn: function(index) {
-			            // See Options->getThumbBoundsFn section of docs for more info
+
 			            var thumbnail = items[index].el.children[0],
 			                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
 			                rect = thumbnail.getBoundingClientRect();
@@ -249,9 +242,8 @@
 
 
 			    if(fromURL) {
-			    	if(options.galleryPIDs) {
-			    		// parse real index when custom PIDs are used
-			    		// http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+			        if (options.galleryPIDs) {
+
 			    		for(var j = 0; j < items.length; j++) {
 			    			if(items[j].pid == index) {
 			    				options.index = j;
@@ -265,7 +257,6 @@
 			    	options.index = parseInt(index, 10);
 			    }
 
-			    // exit if index not found
 			    if( isNaN(options.index) ) {
 			    	return;
 			    }
@@ -302,10 +293,8 @@
 			        options.showAnimationDuration = 0;
 			    }
 
-			    // Pass data to PhotoSwipe and initialize it
 			    gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 
-			    // see: http://photoswipe.com/documentation/responsive-images.html
 				var realViewportWidth,
 				    useLargeImages = false,
 				    firstResize = true,
@@ -358,14 +347,12 @@
 			    gallery.init();
 			};
 
-			// select all gallery elements
 			var galleryElements = document.querySelectorAll( gallerySelector );
 			for(var i = 0, l = galleryElements.length; i < l; i++) {
 				galleryElements[i].setAttribute('data-pswp-uid', i+1);
 				galleryElements[i].onclick = onThumbnailsClick;
 			}
 
-			// Parse URL and open gallery if it contains #&pid=3&gid=1
 			var hashData = photoswipeParseHash();
 			if(hashData.pid && hashData.gid) {
 				openPhotoSwipe( hashData.pid,  galleryElements[ hashData.gid - 1 ], true, true );
@@ -377,12 +364,3 @@
 	})();
 
 </script>
-
-@*<div class="row">
-    @foreach (var photo in Model)
-    {
-        <div class="col-sm-4">
-            <img src="@photo.path" class="img-responsive">
-        </div>
-    }
-</div>*@

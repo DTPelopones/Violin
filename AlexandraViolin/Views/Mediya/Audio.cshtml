@@ -8,16 +8,21 @@
                 <source src="../audio/Wega Violins.ogg" type="audio/ogg">
                 <source src="../audio/Wega Violins.mp3" type="audio/mp3">
             </audio>
-            <h3>Вивильди "Лето"</h3>
-            <p>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</p>
+            <p class="pvideo"><b>Вивильди "Лето" - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
         </div>
         <div class="col-md-4 portfolio-item">
             <audio controls>
                 <source src="../audio/Сырба.ogg" type="audio/ogg">
                 <source src="../audio/Сырба.mp3" type="audio/mp3">
             </audio>
-            <h3>Сырба</h3>
-            <p>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</p>
+            <p class="pvideo"><b>Сырба - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
         </div>
     </div> 
 
+<script>
+    $("audio").on("play", function() {
+        $("audio").not(this).each(function(index, audio) {
+            audio.pause();
+        });
+    });
+</script> 

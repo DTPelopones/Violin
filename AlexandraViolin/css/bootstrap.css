@@ -469,6 +469,13 @@ h6,
 p {
   margin: 0 0 10.5px;
   text-align: justify;
+  text-indent: 25px; 
+}
+.pvideo {
+  margin: 0 0 10.5px;
+  text-align: justify;
+  text-indent: 0px;
+  font-size:small;
 }
 .lead {
   margin-bottom: 21px;

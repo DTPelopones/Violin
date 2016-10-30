@@ -40,6 +40,7 @@ namespace Violin.Domain
                 cache.size = instance.size;
                 cache.sizem = instance.sizem;
                 cache.pathm = instance.pathm;
+                cache.sort = instance.sort;
                 cache.description = instance.description;
                 cache.movieTime = instance.movieTime;
                 Db.Photo.Context.SubmitChanges();

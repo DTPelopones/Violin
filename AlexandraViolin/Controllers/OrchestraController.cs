@@ -7,19 +7,19 @@ namespace AlexandraViolin.Controllers
 {
     public class OrchestraController : BaseController
     {
-        int pageSize = 15;
+        int pageSize = 16;
         public ActionResult Index(int? page)
         {
             string album = "Orchestra";
             IEnumerable<Photo> photoes = null;
             if (!page.HasValue)
             {
-                photoes = repository.Photo.Where(f => f.path.Contains(album)).OrderBy(f => f.ID).Take(pageSize);
+                photoes = repository.Photo.Where(f => f.path.Contains(album)).Where(f => f.sort != null).OrderBy(f => f.sort).Take(pageSize);
             }
             else
             {
                 int pageIndex = pageSize * page.Value;
-                photoes = repository.Photo.Where(f => f.path.Contains(album)).OrderBy(f => f.ID).Skip(pageIndex).Take(pageSize);
+                photoes = repository.Photo.Where(f => f.path.Contains(album)).Where(f => f.sort != null).OrderBy(f => f.sort).Skip(pageIndex).Take(pageSize);
             }
 
             ViewBag.sendingProgress = "display: none;";

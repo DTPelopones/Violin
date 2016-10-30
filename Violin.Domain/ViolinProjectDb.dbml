@@ -78,6 +78,7 @@
       <Column Name="pathm" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Column Name="sizem" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="size" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+      <Column Name="sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

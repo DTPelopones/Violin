@@ -12,45 +12,46 @@
                                 OnSuccess = "MailSended"
                             }))
 {
-    
-    @*<form action="contact-form-submission.php" method="POST" role="form">*@
         <div id="emailSend" class="row">
             <div class="form-group col-lg-4">
-                @*<label for="input1">Имя</label>*@
                 @Html.LabelFor(model => model.FromName)
-                @Html.TextBoxFor(model => model.FromName, new { @class = "form-control" })
-                @*<input type="text" id="input1" class="form-control" name="contact_name">*@
+                @Html.TextBoxFor(model => model.FromName, new { @class = "form-control", @onkeyup = "checkParams()" })
             </div>
             <div class="form-group col-lg-4">
-                @*<label for="input2">Email</label>*@
                 @Html.LabelFor(model => model.FromEmail)
-                @Html.TextBoxFor(model => model.FromEmail, new { @class = "form-control" }) 
+                @Html.TextBoxFor(model => model.FromEmail, new { @class = "form-control", @onkeyup = "checkParams()", @onload = "checkParams()" }) 
                 @Html.ValidationMessageFor(model => model.FromEmail, "", new { @class = "text-danger" }) 
-                @*<input type="email" id="input2" class="form-control" name="contact_email">*@
             </div>
             <div class="form-group col-lg-4">
                 @Html.LabelFor(model => model.Phone)
                 @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
-                @*<label for="input3">Телефон</label>
-                <input type="phone" id="input3" class="form-control" name="contact_phone">*@
             </div>
-            @*<div class="clearfix"></div>*@
             <div class="form-group col-lg-12">
-                @*<label for="input4">Сообщение</label>*@
                 @Html.LabelFor(model => model.Body)
                 @Html.TextAreaFor(model => model.Body, new { @class = "form-control" })
-                @*<textarea id="input4" rows="6" class="form-control" name="contact_message"></textarea>*@
             </div>
             <div class="form-group col-lg-12">
-                @*<input type="hidden" value="contact" name="save">*@
-                <input type="submit" class="btn btn-primary" value="Отправить" />
+                <input id="submit" type="submit" class="btn btn-primary" value="Отправить" />
                 <span id="sendingProgress" style="@ViewBag.sendingProgress">
                     идет отправка сообщения...
                     <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
                 </span>
-                @*<button class="btn btn-primary" type="submit">Отправить</button>*@
             </div>
         </div>
-    @*</form>*@
-
     }
+
+<script>
+    function checkParams() {
+        var name = $('#FromName').val();
+        var email = $('#FromEmail').val();
+
+        if(name.length != 0 && email.length != 0 && regularExpressionValid) {
+            $('#submit').removeAttr('disabled');
+        } else {
+            $('#submit').attr('disabled', 'disabled');
+        }
+    }
+    window.onload = function () {
+        checkParams();
+    }
+</script>

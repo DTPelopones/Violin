@@ -3,6 +3,45 @@
 	font-family: Tahoma;
 }*/
 
+a.crop
+{
+  float:left;
+  /*margin:.5em 10px .5em 0;*/
+  margin:.5em 10px .5em 0;
+  overflow:hidden; /* this is important */
+  position:relative; /* this is important too */
+  /*border:1px solid #ccc;*/
+  width:275px;
+  height:200px;
+}
+a.cropOrchestra
+{
+  float:left;
+  /*margin:.5em 10px .5em 0;*/
+  margin:.5em 10px .5em 0;
+  overflow:hidden; /* this is important */
+  position:relative; /* this is important too */
+  /*border:1px solid #ccc;*/
+  width:275px;
+  height:200px;
+}
+a.cropLesson
+{
+  float:left;
+  margin:.5em 10px .5em 0;
+  overflow:hidden; /* this is important */
+  position:relative; /* this is important too */
+  /*border:1px solid #ccc;*/
+  width:275px;
+  height:200px;
+}
+img.crop 
+{
+  position:absolute;
+  top:-40px;
+  left:-10px;
+}
+
 header {
 	text-align: center;
 }
@@ -48,6 +87,8 @@ header {
 	margin: 0;
 	/*width: 100%;*/
     height: 180px;
+    margin-left: -1px;
+    margin-top: -1px;
 }
 
 .dayday:hover {
@@ -156,6 +197,25 @@ header {
 	}
 
     #calendar .dayday {
-	    width: 100%;
+	    width: 100%; 
+        /*margin-bottom: -1px;*/ 
+        margin-top: -1px; 
     }
+
+    a.crop
+    {
+      margin:.5em 10px .5em 0.5em;
+    }
+
+    a.cropOrchestra
+    {
+      margin:.5em 10px .5em 1.5em;
+    }
+
+    a.cropLesson
+    {
+      margin:.5em 10px .5em 0.5em;
+    }
+
 }
+

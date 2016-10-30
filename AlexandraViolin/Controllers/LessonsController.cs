@@ -10,13 +10,7 @@ namespace AlexandraViolin.Controllers
 {
     public class LessonsController : BaseController
     {
-        int pageSize = 15;
-
-        //public ActionResult Index()
-        //{
-        //    ViewBag.sendingProgress = "display: none;";
-        //    return View();
-        //}
+        int pageSize = 16;
 
         public ActionResult Feedback()
         {

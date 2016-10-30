@@ -1485,6 +1485,8 @@ namespace Violin.Domain
 		
 		private string _size;
 		
+		private System.Nullable<int> _sort;
+		
     #region Определения метода расширяемости
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1511,6 +1513,8 @@ namespace Violin.Domain
     partial void OnsizemChanged();
     partial void OnsizeChanging(string value);
     partial void OnsizeChanged();
+    partial void OnsortChanging(System.Nullable<int> value);
+    partial void OnsortChanged();
     #endregion
 		
 		public Photo()
@@ -1734,6 +1738,26 @@ namespace Violin.Domain
 					this._size = value;
 					this.SendPropertyChanged("size");
 					this.OnsizeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sort", DbType="Int")]
+		public System.Nullable<int> sort
+		{
+			get
+			{
+				return this._sort;
+			}
+			set
+			{
+				if ((this._sort != value))
+				{
+					this.OnsortChanging(value);
+					this.SendPropertyChanging();
+					this._sort = value;
+					this.SendPropertyChanged("sort");
+					this.OnsortChanged();
 				}
 			}
 		}

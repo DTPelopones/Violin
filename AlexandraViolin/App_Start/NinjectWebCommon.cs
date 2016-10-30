@@ -11,7 +11,8 @@ namespace AlexandraViolin.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Violin.Domain;
-    using System.Configuration; 
+    using System.Configuration;
+    using System.Data.SqlClient;
 
     public static class NinjectWebCommon 
     {
@@ -63,8 +64,17 @@ namespace AlexandraViolin.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            SqlConnectionStringBuilder connectStringBuilder = new SqlConnectionStringBuilder();
+            connectStringBuilder.DataSource = "SKYLAKE";
+            connectStringBuilder.InitialCatalog = "AlexandraViolin";
+            connectStringBuilder.ConnectTimeout = 30;
+            connectStringBuilder.AsynchronousProcessing = true;
+            connectStringBuilder.MultipleActiveResultSets = true;
+            connectStringBuilder.UserID = "avi";
+            connectStringBuilder.Password = "test1";
+            //ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             System.Web.Mvc.DependencyResolver.SetResolver(new Infrastructure.NinjectDependencyResolver(kernel));
-            kernel.Bind<LessonDataContext>().ToMethod(c => new LessonDataContext(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString));
+            kernel.Bind<LessonDataContext>().ToMethod(c => new LessonDataContext(connectStringBuilder.ConnectionString));
             kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();
         }        
     }

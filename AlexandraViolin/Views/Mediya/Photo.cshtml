@@ -24,14 +24,14 @@
         </div>
     </div>
 
-    <div id="photopart">
+    <div id="photopart" class="col-lg-12">
         @Html.Partial("PhotoPart", Model)
     </div>
-    <hr>
     <div id="loadPartPhoto" style="display: none">
         <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
     </div>
 </div>
+<hr/>
 
 <script type="text/javascript">
 var pageNo = 0;
