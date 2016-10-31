@@ -5,29 +5,34 @@
 <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
 <script>
-    players = new Array();
-
+    //players = new Array(); //del
+    
     function onYouTubeIframeAPIReady() {
         var temp = $("iframe.yt_players");
         for (var i = 0; i < temp.length; i++) {
-            var t = new YT.Player($(temp[i]).attr('id'), {
+            new YT.Player($(temp[i]).attr('id'), {
                 events: {
                     'onStateChange': onPlayerStateChange
                 }
             });
-            players.push(t);
+            //players.push(t); //del
         }
     }
+    
+    //onYouTubeIframeAPIReady(); //call, when load more video
 
-    onYouTubeIframeAPIReady();
-
+    var activePlayer;
     function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
-            var temp = event.target.getVideoUrl();
-            var tempPlayers = $("iframe.yt_players");
-            for (var i = 0; i < players.length; i++) { 
-                if (players[i].getVideoUrl() != temp) players[i].stopVideo(); 
+            //var temp = event.target.getVideoUrl(); //del
+            //var tempPlayers = $("iframe.yt_players"); //del
+            //for (var i = 0; i < players.length; i++) {  //del
+            //    if (players[i].getVideoUrl() != temp) players[i].pauseVideo();  //del
+            //} //del
+            if (activePlayer && activePlayer != event.target) {
+                activePlayer.pauseVideo();
             }
+            activePlayer = event.target;
         }
     }
 </script>

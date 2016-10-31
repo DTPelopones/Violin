@@ -12,6 +12,29 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
+.brand-home {
+    padding-left: 12%;
+    display: inline-block;
+    text-align: center;
+    position: fixed;
+    bottom: 25%;
+}
+
+.brand-name {
+    font-size: 40px;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.brand-name:before {content: '';
+    background: url(../favicon.ico) no-repeat center;
+    background-size: contain;
+    width: 64px;height: 64px;
+    position: absolute;
+    left: calc(50% - 32px);top: -64px;
+}
+
 body {
   margin: 0;
 }
@@ -5692,6 +5715,22 @@ button.close {
 @media (max-width: 767px) {
   .hidden-xs {
     display: none !important;
+  }
+  .brand-home {
+      padding-left: 10px;
+      padding-top: 30px;
+      position: inherit;
+  }
+  .brand-name {
+      font-size: 22px;
+      letter-spacing: 1px;
+      padding-left: 40px;
+  }
+  .brand-name:before {
+      width: 45px;
+      height: 45px;
+      left: 0;
+      top: -6px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {

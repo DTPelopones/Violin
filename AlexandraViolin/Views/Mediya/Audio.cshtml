@@ -20,9 +20,14 @@
     </div> 
 
 <script>
-    $("audio").on("play", function() {
-        $("audio").not(this).each(function(index, audio) {
-            audio.pause();
-        });
+    var activeAudio;
+    $("audio").on("play", function () {
+        if (activeAudio && activeAudio != this) {
+            activeAudio.pause();
+        }
+        activeAudio = this;
+        //$("audio").not(this).each(function(index, audio) { //del
+        //    audio.pause(); //del
+        //}); //del
     });
 </script> 

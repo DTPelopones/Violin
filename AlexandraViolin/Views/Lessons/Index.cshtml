@@ -87,10 +87,10 @@ $(window).scroll(function () {
             if (pageNo > -1 && !isPageLoad) {
                 isPageLoad = true;
                 pageNo++;
-                var alb = "@ViewBag.album";
+                @*var alb = "@ViewBag.album";*@
                 $.ajax({
-                    url: 'Photo',
-                    data: { 'page': pageNo, 'album': alb },
+                    url: 'Lessons',
+                    data: { 'page': pageNo },
                     success: function (data) {
                         if (data != '') {
                             $('#photopart').append(data);

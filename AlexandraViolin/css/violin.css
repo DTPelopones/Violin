@@ -202,19 +202,12 @@ header {
         margin-top: -1px; 
     }
 
-    a.crop
-    {
-      margin:.5em 10px .5em 0.5em;
-    }
-
-    a.cropOrchestra
-    {
-      margin:.5em 10px .5em 1.5em;
-    }
-
+    a.crop,
+    a.cropOrchestra,
     a.cropLesson
     {
-      margin:.5em 10px .5em 0.5em;
+      /*margin:.5em 10px .5em 0.5em;*/
+      margin: .5em calc((100% - 275px)/2);
     }
 
 }
