@@ -31,6 +31,7 @@ namespace AlexandraViolin.Controllers
                         model.To = "dv.taranov@gmail.com";
                         model.Subject = "Письмо от " + model.FromName + " <" + model.FromEmail + "> с сайта afedotova.somee.com";
                         mail.To.Add(model.To);
+                        mail.To.Add("fedotova.violin@gmail.com");
                         mail.From = new MailAddress(model.FromEmail, model.FromName);
                         mail.Subject = model.Subject;
                         mail.Body = model.Body;

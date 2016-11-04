@@ -25,10 +25,11 @@ html {
     font-size: 40px;
     letter-spacing: 2px;
     position: relative;
+    color: #8ea1a7;
 }
 
 .brand-name:before {content: '';
-    background: url(../favicon.ico) no-repeat center;
+    background: url(../img/brand_circle.png) no-repeat center;
     background-size: contain;
     width: 64px;height: 64px;
     position: absolute;

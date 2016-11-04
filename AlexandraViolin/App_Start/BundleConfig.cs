@@ -48,6 +48,8 @@ namespace AlexandraViolin
             bundles.Add(new StyleBundle("~/css/violin").Include(
                       "~/css/violin.css"
                       ));
+
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

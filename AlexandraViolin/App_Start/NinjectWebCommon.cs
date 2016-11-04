@@ -65,13 +65,18 @@ namespace AlexandraViolin.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             SqlConnectionStringBuilder connectStringBuilder = new SqlConnectionStringBuilder();
+
+
+
             connectStringBuilder.DataSource = "SKYLAKE";
             connectStringBuilder.InitialCatalog = "AlexandraViolin";
+            connectStringBuilder.UserID = "avi";
+            connectStringBuilder.Password = "test1";
+
             connectStringBuilder.ConnectTimeout = 30;
             connectStringBuilder.AsynchronousProcessing = true;
             connectStringBuilder.MultipleActiveResultSets = true;
-            connectStringBuilder.UserID = "avi";
-            connectStringBuilder.Password = "test1";
+
             //ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             System.Web.Mvc.DependencyResolver.SetResolver(new Infrastructure.NinjectDependencyResolver(kernel));
             kernel.Bind<LessonDataContext>().ToMethod(c => new LessonDataContext(connectStringBuilder.ConnectionString));

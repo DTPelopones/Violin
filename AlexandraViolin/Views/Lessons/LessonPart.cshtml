@@ -11,7 +11,7 @@
     <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
         @foreach (var photo in Model)
         {
-            <a href="@photo.path" data-size="@photo.size" data-med="@photo.pathm" data-med-size="@photo.sizem" class="col-sm-5 cropLesson">@*class="demo-gallery__img--main"*@
+            <a href="@photo.path" data-size="@photo.size" data-med="@photo.path" data-med-size="@photo.size" class="col-sm-5 cropLesson">@*class="demo-gallery__img--main"*@
             <img src="@photo.pathm" class="crop" alt="">
         </a>
         }
