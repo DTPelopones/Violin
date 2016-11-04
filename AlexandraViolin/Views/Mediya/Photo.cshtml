@@ -86,8 +86,6 @@
 <script type="text/javascript">
     //(function () {
 
-    var gallery;
-
         var initPhotoSwipeFromDOM = function (gallerySelector) {
 
             var parseThumbnailElements = function (el) {
@@ -223,7 +221,7 @@
 
             var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
                 var pswpElement = document.querySelectorAll('.pswp')[0],
-			        //gallery,
+			        gallery,
 			        options,
 			        items;
 
@@ -357,9 +355,7 @@
                     }
                 });
 
-                console.log('ded');
                 gallery.init();
-                console.log('gallery: ' + gallery.items.length);
             };
 
             var galleryElements = document.querySelectorAll(gallerySelector);
