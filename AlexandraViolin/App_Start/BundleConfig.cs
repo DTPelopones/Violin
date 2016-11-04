@@ -35,9 +35,23 @@ namespace AlexandraViolin
                         "~/js/violin.js"
                         ));
 
+            bundles.Add(new ScriptBundle("~/bundles/photoswipejs").Include(
+                        "~/PhotoSwipe/photoswipe.min.js",
+                        "~/PhotoSwipe/photoswipe-ui-default.min.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/bundles/photoswipemanjs").Include(
+                    "~/js/photoswipe.js"
+            ));
+
             //bundles.Add(new ScriptBundle("~/bundles/pageInfinity").Include(
             //        "~/js/pageInfinity.js"
             //        ));
+
+            bundles.Add(new StyleBundle("~/photoswipecss").Include(
+                      "~/PhotoSwipe/photoswipe.css",
+                      "~/PhotoSwipe/default-skin/default-skin.css"
+                      ));
 
             bundles.Add(new StyleBundle("~/css").Include(
                       "~/css/bootstrap.css",
@@ -45,6 +59,7 @@ namespace AlexandraViolin
                       "~/css/font-awesome.min.css",
                       "~/css/bootstrap-social.css"
                       ));
+
             bundles.Add(new StyleBundle("~/css/violin").Include(
                       "~/css/violin.css"
                       ));

@@ -1487,6 +1487,16 @@ namespace Violin.Domain
 		
 		private System.Nullable<int> _sort;
 		
+		private string _alt;
+		
+		private string _eventDay;
+		
+		private string _eventMonthYear;
+		
+		private string _eventDesc;
+		
+		private string _eventTime;
+		
     #region Определения метода расширяемости
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1515,6 +1525,16 @@ namespace Violin.Domain
     partial void OnsizeChanged();
     partial void OnsortChanging(System.Nullable<int> value);
     partial void OnsortChanged();
+    partial void OnaltChanging(string value);
+    partial void OnaltChanged();
+    partial void OneventDayChanging(string value);
+    partial void OneventDayChanged();
+    partial void OneventMonthYearChanging(string value);
+    partial void OneventMonthYearChanged();
+    partial void OneventDescChanging(string value);
+    partial void OneventDescChanged();
+    partial void OneventTimeChanging(string value);
+    partial void OneventTimeChanged();
     #endregion
 		
 		public Photo()
@@ -1758,6 +1778,106 @@ namespace Violin.Domain
 					this._sort = value;
 					this.SendPropertyChanged("sort");
 					this.OnsortChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_alt", DbType="NVarChar(255)")]
+		public string alt
+		{
+			get
+			{
+				return this._alt;
+			}
+			set
+			{
+				if ((this._alt != value))
+				{
+					this.OnaltChanging(value);
+					this.SendPropertyChanging();
+					this._alt = value;
+					this.SendPropertyChanged("alt");
+					this.OnaltChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eventDay", DbType="NVarChar(20)")]
+		public string eventDay
+		{
+			get
+			{
+				return this._eventDay;
+			}
+			set
+			{
+				if ((this._eventDay != value))
+				{
+					this.OneventDayChanging(value);
+					this.SendPropertyChanging();
+					this._eventDay = value;
+					this.SendPropertyChanged("eventDay");
+					this.OneventDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eventMonthYear", DbType="NVarChar(10)")]
+		public string eventMonthYear
+		{
+			get
+			{
+				return this._eventMonthYear;
+			}
+			set
+			{
+				if ((this._eventMonthYear != value))
+				{
+					this.OneventMonthYearChanging(value);
+					this.SendPropertyChanging();
+					this._eventMonthYear = value;
+					this.SendPropertyChanged("eventMonthYear");
+					this.OneventMonthYearChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eventDesc", DbType="NVarChar(150)")]
+		public string eventDesc
+		{
+			get
+			{
+				return this._eventDesc;
+			}
+			set
+			{
+				if ((this._eventDesc != value))
+				{
+					this.OneventDescChanging(value);
+					this.SendPropertyChanging();
+					this._eventDesc = value;
+					this.SendPropertyChanged("eventDesc");
+					this.OneventDescChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_eventTime", DbType="NVarChar(10)")]
+		public string eventTime
+		{
+			get
+			{
+				return this._eventTime;
+			}
+			set
+			{
+				if ((this._eventTime != value))
+				{
+					this.OneventTimeChanging(value);
+					this.SendPropertyChanging();
+					this._eventTime = value;
+					this.SendPropertyChanged("eventTime");
+					this.OneventTimeChanged();
 				}
 			}
 		}

@@ -14,22 +14,7 @@ namespace AlexandraViolin.Controllers
             return View();
         }
 
-        //public ActionResult Login(string email, string password) 
-        //{
-        //    string query = "select a.* from dbo.fn_login({0},{1}) as a;";
-
-        //    ViewBag.Account = repository.SqlQueryLogin(query, email, password); 
-
-        //    return PartialView(ViewBag.Menu);
-        //}
-
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
-
         [HttpPost]
-        //[ValidateAntiForgeryToken]
         public PartialViewResult Login(string email, string password_hash)
         {
             if (ModelState.IsValid)

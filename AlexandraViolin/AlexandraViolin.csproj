@@ -423,6 +423,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\pageInfinity.js" />
+    <Content Include="js\photoswipe.js" />
     <Content Include="js\violin.js" />
     <Content Include="App_Data\Backups\AlexandraViolin.bak" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -480,6 +481,8 @@
     <Content Include="Views\Lessons\LessonPart.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error\Forbidden.cshtml" />
+    <Content Include="Views\PhotoSwipe\PhotoSwipePart.cshtml" />
+    <Content Include="Views\Afisha\AfishaPart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />

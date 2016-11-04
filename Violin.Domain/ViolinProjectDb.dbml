@@ -79,6 +79,11 @@
       <Column Name="sizem" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="size" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
       <Column Name="sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alt" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="eventDay" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="eventMonthYear" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="eventDesc" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="eventTime" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

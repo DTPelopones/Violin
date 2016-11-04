@@ -41,6 +41,11 @@ namespace Violin.Domain
                 cache.sizem = instance.sizem;
                 cache.pathm = instance.pathm;
                 cache.sort = instance.sort;
+                cache.alt = instance.alt;
+                cache.eventTime = instance.eventTime;
+                cache.eventDay = instance.eventDay;
+                cache.eventMonthYear = instance.eventMonthYear;
+                cache.eventDesc = instance.eventDesc;
                 cache.description = instance.description;
                 cache.movieTime = instance.movieTime;
                 Db.Photo.Context.SubmitChanges();

@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = "Оркестр";
 }
+
+@Scripts.Render("~/bundles/photoswipejs")
+@Styles.Render("~/photoswipecss")
+
+@Styles.Render("~/css/violin")
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
@@ -22,11 +28,11 @@
             <img src="../img/Orchestra/OrchestraMain.jpg" class="img-responsive">
         </div>
         <div class="col-md-6">
-            <h2>Камерный оркестр "Московская камерта"</h2>
+            <h2>Камерный оркестр "Московская камерата"</h2>
             <p>
                 Камерный оркестр <b>"Московская камерата"</b>, признанный одним из ведущих музыкальных коллективов <b>России</b>, был создан в 1994 году.
-                С самого основания оркестр возглавлял  выдающийся скрипач, композитор, <b>Народный артист России Игорь Фролов</b>. 
-                Под его управлением коллектив достиг высокого исполнительского мастерства, освоил большой и разнообразный репертуар и получил международное признание. 
+                С самого основания оркестр возглавлял  выдающийся скрипач, композитор, <b>Народный артист России Игорь Фролов</b>.
+                Под его управлением коллектив достиг высокого исполнительского мастерства, освоил большой и разнообразный репертуар и получил международное признание.
                 Оркестр с большим успехом гастролировал в городах <b>Испании</b>, <b>Германии</b>, <b>Франции</b> и <b>Польши</b>.
             </p>
             <p>
@@ -34,13 +40,13 @@
                 красота звучания, высокая ансамблевая культура и  убедительность трактовки.
                 Оркестр с неизменным успехом выступает на лучших концертных площадках <b>Москвы</b>, таких как <b>Большой и Малый залы Московской консерватории, Светлановский и Камерный  залы ММДМ, Новая опера им.Е.Колобова, Концертный зал на Моховой</b> и т.д.
             </p>
+        </div>
+
+        <div class="col-md-12">
             <p>
                 Камерный оркестр <b>"Московская камерата"</b> - постоянный участник музыкальных фестивалей в <b>Москве</b> и других городах <b>России</b>:
                 <b>"Кремль музыкальный", "Весна в России", "Коган фестиваль", "Время высокой музыки", "Арктический фестиваль классической музыки"</b>.
             </p>
-        </div>
-
-        <div class="col-md-12">
             <p>
                 В 2007 году в сопровождении коллектива проходил <b>Третий тур Международного конкурса скрипичных мастеров им.П.И.Чайковского</b>.
                 <br />
@@ -63,9 +69,16 @@
             <div>
                 <h2 class="page-header">Фото</h2>
             </div>
-    
+
             <div id="photopart">
-                @Html.Partial("OrchestraPart")
+                <div class="row">
+                    <div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+                        @Html.Partial("OrchestraPart")
+                    </div>
+                </div>
+
+                @Html.Partial("~/Views/PhotoSwipe/PhotoSwipePart.cshtml")
+            
             </div>
             <div id="loadPartPhoto" style="@ViewBag.sendingProgress">
                 <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
@@ -74,35 +87,36 @@
     </div>
 </div>
 <hr/>
-@*@Scripts.Render("~/bundles/pageInfinity")*@ 
+
+@Scripts.Render("~/bundles/photoswipemanjs")
 
 <script type="text/javascript">
-var pageNo = 0;
-var isPageLoad = false;
+    var pageNo = 0;
+    var isPageLoad = false;
 
-$(window).scroll(function () {
-        if($(window).scrollTop() == $(document).height() - $(window).height())
-        {
-            if (pageNo > -1 && !isPageLoad) {
-                isPageLoad = true;
-                pageNo++;
-                var alb = "@ViewBag.album";
-                $.ajax({
-                    url: 'Photo',
-                    data: { 'page': pageNo, 'album': alb },
-                    success: function (data) {
-                        if (data != '') {
-                            $('#photopart').append(data);
+    $(window).scroll(function () {
+            if($(window).scrollTop() == $(document).height() - $(window).height())
+            {
+                if (pageNo > -1 && !isPageLoad) {
+                    isPageLoad = true;
+                    pageNo++;
+                    var alb = "@ViewBag.album";
+                    $.ajax({
+                        url: 'Photo',
+                        data: { 'page': pageNo, 'album': alb },
+                        success: function (data) {
+                            if (data != '') {
+                                $('#demo-test-gallery').append(data);
+                            }
+                            else {
+                                pageNo = -1;
+                            }
+                            $("#loadPartPhoto").hide();
+                            isPageLoad = false;
                         }
-                        else {
-                            pageNo = -1;
-                        }
-                        $("#loadPartPhoto").hide();
-                        isPageLoad = false;
-                    }
-                });
+                    });
 
+                }
             }
-        }
-});
+    });
 </script>

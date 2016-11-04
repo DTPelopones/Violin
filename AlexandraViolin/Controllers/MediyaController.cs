@@ -7,7 +7,7 @@ namespace AlexandraViolin.Controllers
 {
     public class MediyaController : BaseController
     {
-        int pageSize = 16;
+        int pageSize = 24;
         public ActionResult Photo(int? page, string album)
         {
             IEnumerable<Photo> photoes = null;

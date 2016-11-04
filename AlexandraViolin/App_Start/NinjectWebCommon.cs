@@ -66,8 +66,6 @@ namespace AlexandraViolin.App_Start
         {
             SqlConnectionStringBuilder connectStringBuilder = new SqlConnectionStringBuilder();
 
-
-
             connectStringBuilder.DataSource = "SKYLAKE";
             connectStringBuilder.InitialCatalog = "AlexandraViolin";
             connectStringBuilder.UserID = "avi";
@@ -77,7 +75,6 @@ namespace AlexandraViolin.App_Start
             connectStringBuilder.AsynchronousProcessing = true;
             connectStringBuilder.MultipleActiveResultSets = true;
 
-            //ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             System.Web.Mvc.DependencyResolver.SetResolver(new Infrastructure.NinjectDependencyResolver(kernel));
             kernel.Bind<LessonDataContext>().ToMethod(c => new LessonDataContext(connectStringBuilder.ConnectionString));
             kernel.Bind<IRepository>().To<SqlRepository>().InRequestScope();

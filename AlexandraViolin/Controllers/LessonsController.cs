@@ -10,7 +10,7 @@ namespace AlexandraViolin.Controllers
 {
     public class LessonsController : BaseController
     {
-        int pageSize = 16;
+        int pageSize = 24;
 
         public ActionResult Feedback()
         {
@@ -35,7 +35,7 @@ namespace AlexandraViolin.Controllers
                         mail.From = new MailAddress(model.FromEmail, model.FromName);
                         mail.Subject = model.Subject;
                         mail.Body = model.Body;
-                        //mail.IsBodyHtml = true; 
+
                         using (SmtpClient smtp = new SmtpClient())
                         {
                             smtp.Host = "smtp.gmail.com";
@@ -46,7 +46,6 @@ namespace AlexandraViolin.Controllers
                             smtp.EnableSsl = true;
                             smtp.Send(mail);
                             ViewBag.sendingProgress = "display: none;";
-                            //model.Clear();
                         }
                         return PartialView("Feedback");
                     }

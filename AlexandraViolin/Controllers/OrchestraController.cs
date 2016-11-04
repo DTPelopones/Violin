@@ -7,7 +7,7 @@ namespace AlexandraViolin.Controllers
 {
     public class OrchestraController : BaseController
     {
-        int pageSize = 16;
+        int pageSize = 24;
         public ActionResult Index(int? page)
         {
             string album = "Orchestra";
