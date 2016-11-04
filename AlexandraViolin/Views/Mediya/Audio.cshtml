@@ -2,22 +2,27 @@
     ViewBag.Title = "Аудио - ";
 }
 
-    <div class="row">
-        <div class="col-md-4 portfolio-item">
-            <audio controls preload="none">
-                <source src="../audio/Wega Violins.ogg" type="audio/ogg">
-                <source src="../audio/Wega Violins.mp3" type="audio/mp3">
-            </audio>
-            <p class="pvideo"><b>Вивальди "Лето" - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
-        </div>
-        <div class="col-md-4 portfolio-item">
-            <audio controls>
-                <source src="../audio/Сырба.ogg" type="audio/ogg">
-                <source src="../audio/Сырба.mp3" type="audio/mp3">
-            </audio>
-            <p class="pvideo"><b>Сырба - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
-        </div>
-    </div> 
+@section metatags
+{
+    <meta name="keywords" content="Александра Федотова, музыка скрипка, " />
+}
+
+<div class="row">
+    <div class="col-md-6 portfolio-item">
+        <audio controls preload="metadata">
+            <source src="../audio/Wega Violins.ogg" type="audio/ogg">
+            <source src="../audio/Wega Violins.mp3" type="audio/mp3">
+        </audio>
+        <p class="pvideo"><b>Вивальди "Лето" - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
+    </div>
+    <div class="col-md-6 portfolio-item">
+        <audio controls preload="metadata">
+            <source src="../audio/Сырба.ogg" type="audio/ogg">
+            <source src="../audio/Сырба.mp3" type="audio/mp3">
+        </audio>
+        <p class="pvideo"><b>Сырба - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
+    </div>
+</div> 
 
 <script>
     var activeAudio;
@@ -26,8 +31,5 @@
             activeAudio.pause();
         }
         activeAudio = this;
-        //$("audio").not(this).each(function(index, audio) { //del
-        //    audio.pause(); //del
-        //}); //del
     });
 </script> 

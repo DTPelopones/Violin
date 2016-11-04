@@ -60,6 +60,9 @@ video {
   display: inline-block;
   vertical-align: baseline;
 }
+audio {
+    width: 100%;
+}
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -5624,6 +5627,19 @@ button.close {
 .carousel-caption .btn {
   text-shadow: none;
 }
+.navbar {
+  font-size: 18px;
+  font-family: Arciform, "News Cycle", "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: rgba(0,0,0,0.3) 3px 3px 6px; /*text-shadow: rgba(0,0,0,0.3) 3px 3px 6px;*/
+}
+.navbar-brand {
+  font-size: 25px;
+  font-weight: 500;
+  font-family: CocaCola; 
+  text-transform: uppercase;
+}
 @media screen and (min-width: 768px) {
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .glyphicon-chevron-right,
@@ -5738,6 +5754,12 @@ button.close {
   .hidden-sm {
     display: none !important;
   }
+  .navbar {
+      font-size: 16px;
+  }
+  .brand-home {
+      padding-left: 5%;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
@@ -5771,19 +5793,6 @@ button.close {
   .hidden-print {
     display: none !important;
   }
-}
-.navbar {
-  font-size: 18px;
-  font-family: Arciform, "News Cycle", "Arial Narrow Bold", sans-serif;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-shadow: rgba(0,0,0,0.3) 3px 3px 6px; /*text-shadow: rgba(0,0,0,0.3) 3px 3px 6px;*/
-}
-.navbar-brand {
-  font-size: 25px;
-  font-weight: 500;
-  font-family: CocaCola; 
-  text-transform: uppercase;
 }
 .has-warning .help-block,
 .has-warning .control-label {
