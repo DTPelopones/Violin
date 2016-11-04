@@ -268,10 +268,6 @@
     <Content Include="img\Concert\Concert_19m.jpg" />
     <Content Include="img\Concert\Concert_1m.jpg" />
     <Content Include="img\Concert\Concert_2.jpg" />
-    <Content Include="img\Concert\Concert_20.jpg" />
-    <Content Include="img\Concert\Concert_20m.jpg" />
-    <Content Include="img\Concert\Concert_21.jpg" />
-    <Content Include="img\Concert\Concert_21m.jpg" />
     <Content Include="img\Concert\Concert_22.jpg" />
     <Content Include="img\Concert\Concert_22m.jpg" />
     <Content Include="img\Concert\Concert_23.jpg" />
@@ -296,8 +292,6 @@
     <Content Include="img\Concert\Concert_31m.jpg" />
     <Content Include="img\Concert\Concert_32.jpg" />
     <Content Include="img\Concert\Concert_32m.jpg" />
-    <Content Include="img\Concert\Concert_33.jpg" />
-    <Content Include="img\Concert\Concert_33m.jpg" />
     <Content Include="img\Concert\Concert_34.jpg" />
     <Content Include="img\Concert\Concert_34m.jpg" />
     <Content Include="img\Concert\Concert_35.jpg" />
@@ -308,16 +302,8 @@
     <Content Include="img\Concert\Concert_37m.jpg" />
     <Content Include="img\Concert\Concert_38.jpg" />
     <Content Include="img\Concert\Concert_38m.jpg" />
-    <Content Include="img\Concert\Concert_39.jpg" />
-    <Content Include="img\Concert\Concert_39m.jpg" />
     <Content Include="img\Concert\Concert_3m.jpg" />
     <Content Include="img\Concert\Concert_4.jpg" />
-    <Content Include="img\Concert\Concert_40.jpg" />
-    <Content Include="img\Concert\Concert_40m.jpg" />
-    <Content Include="img\Concert\Concert_41.jpg" />
-    <Content Include="img\Concert\Concert_41m.jpg" />
-    <Content Include="img\Concert\Concert_42.jpg" />
-    <Content Include="img\Concert\Concert_42m.jpg" />
     <Content Include="img\Concert\Concert_44.jpg" />
     <Content Include="img\Concert\Concert_44m.jpg" />
     <Content Include="img\Concert\Concert_4m.jpg" />
