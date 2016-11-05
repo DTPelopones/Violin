@@ -12,21 +12,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @RenderSection("metatags", false)
     <title>
         @ViewBag.Title Александра Федотова
     </title>
 
-    <!-- Bootstrap -->
-    @*<link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet">*@
-    @*<link href="@Url.Content("/css/modern-business.css")" rel="stylesheet">*@
-
     @Styles.Render("~/css") 
-
-    @*<script type="text/javascript" src="~/Scripts/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-
-    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
 
     @Scripts.Render("~/bundles/jqueryajaxvalidate") 
 </head>
@@ -44,8 +35,6 @@
                 
                 @Html.ActionLink("AF", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })
             </div>
-
-            
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li id="biography" class="@IsMenuSelected("Index", "Biography", "active")">
@@ -63,18 +52,12 @@
                     <li id="news" class="@IsMenuSelected("Index", "News", "active")">
                         @Html.ActionLink("НОВОСТИ", "Index", "News")
                     </li>
-                    @*<li id="forum" class="@IsMenuSelected("Index", "Forum", "active")">
-                        @Html.ActionLink("ФОРУМ", "Index", "Forum")
-                    </li>*@
                     <li id="lessons" class="@IsMenuSelected("Index", "Lessons", "active")">
                         @Html.ActionLink("УРОКИ", "Index", "Lessons")
                     </li>
                     <li id="contact" class="@IsMenuSelected("Index", "Contact", "active")">
                         @Html.ActionLink("КОНТАКТЫ", "Index", "Contact")
                     </li>
-                    @*<li id="faq" class="@IsMenuSelected("Index", "Faq", "active")">
-                        @Html.ActionLink("ВОПРОСЫ", "Index", "Faq")
-                    </li>*@
                 </ul>
             </div>
         </div>
@@ -82,26 +65,6 @@
 
     @RenderBody()
 
-    @*<div class="container">
-
-        <hr>
-
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; @DateTime.Now.Year</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>*@
-    <!-- /.container -->
-
-    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>*@
-    @*<script src="@Url.Content("/js/bootstrap.js")"></script>*@
-    @*<script src="@Url.Content("/js/modern-business.js")"></script>*@
-    @*<script src="@Url.Content("/js/violin.js")"></script>*@
-
-    @Scripts.Render("~/bundles/bootstrapviolin") 
+    @Scripts.Render("~/bundles/bootstrap") 
 </body>
 </html>
