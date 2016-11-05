@@ -122,6 +122,12 @@ footer {
   margin: 50px 0;
 }
 
+#media-photo .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* Responsive Styles */
 @media (max-width: 767px) {
 
