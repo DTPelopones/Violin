@@ -4,10 +4,15 @@
     ViewBag.Title = "Медиа - ";
 }
 
-@Scripts.Render("~/bundles/photoswipejs")  
-@Styles.Render("~/photoswipecss")
+@section metatags
+{
+    <meta name="keywords" content="концерты Александра Федотова, концерты скрипка, фото Александра Федотова, фото скрипачка, выдающая скрипачка" />
 
-@Styles.Render("~/css/violin")
+    @Scripts.Render("~/bundles/photoswipejs")  
+    @Styles.Render("~/bundles/photoswipecss")
+
+    @Styles.Render("~/bundles/css/violin")
+}
 
 <div class="container">
     <div class="row">

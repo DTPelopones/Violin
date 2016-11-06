@@ -2,40 +2,35 @@
     ViewBag.Title = "Видео - ";
 }
 
-<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+@section metatags
+{
+    <meta name="keywords" content="концерты Александра Федотова, концерты скрипка, видео с Александра Федотова" />
 
-<script>
-    //players = new Array(); //del
-    
-    function onYouTubeIframeAPIReady() {
-        var temp = $("iframe.yt_players");
-        for (var i = 0; i < temp.length; i++) {
-            new YT.Player($(temp[i]).attr('id'), {
-                events: {
-                    'onStateChange': onPlayerStateChange
-                }
-            });
-            //players.push(t); //del
-        }
-    }
-    
-    //onYouTubeIframeAPIReady(); //call, when load more video
+    <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
-    var activePlayer;
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-            //var temp = event.target.getVideoUrl(); //del
-            //var tempPlayers = $("iframe.yt_players"); //del
-            //for (var i = 0; i < players.length; i++) {  //del
-            //    if (players[i].getVideoUrl() != temp) players[i].pauseVideo();  //del
-            //} //del
-            if (activePlayer && activePlayer != event.target) {
-                activePlayer.pauseVideo();
+    <script>
+        function onYouTubeIframeAPIReady() {
+            var temp = $("iframe.yt_players");
+            for (var i = 0; i < temp.length; i++) {
+                new YT.Player($(temp[i]).attr('id'), {
+                    events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
             }
-            activePlayer = event.target;
         }
-    }
-</script>
+
+        var activePlayer;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                if (activePlayer && activePlayer != event.target) {
+                    activePlayer.pauseVideo();
+                }
+                activePlayer = event.target;
+            }
+        }
+    </script>
+}
 
 <div class="row">
     <div class="col-md-4 portfolio-item">

@@ -7,12 +7,13 @@
 @section metatags
 {
     <meta name="keywords" content="Московская Камерата, оркестр, Камерный оркестр" />
+    @Scripts.Render("~/bundles/photoswipejs")
+    @Styles.Render("~/bundles/photoswipecss")
+
+    @Styles.Render("~/bundles/css/violin")
 }
 
-@Scripts.Render("~/bundles/photoswipejs")
-@Styles.Render("~/photoswipecss")
 
-@Styles.Render("~/css/violin")
 
 <div class="container">
     <div class="row">

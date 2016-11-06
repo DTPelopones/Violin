@@ -2,8 +2,11 @@
     ViewBag.Title = "Медиа - ";
 }
 
-
-@Styles.Render("~/css/violin")
+@section metatags
+{
+    <meta name="keywords" content="медиа Александра Федотова, фото Алксандра Федотова, видео Александра Федотова, музыка скрипка, видео скрипка" />
+    @Styles.Render("~/bundles/css/violin")
+}
 
 <div class="container">
     <div class="row">
