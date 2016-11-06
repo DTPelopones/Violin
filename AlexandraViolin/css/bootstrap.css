@@ -1,4 +1,4 @@
-﻿@import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");
+﻿/*@import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");*/
 /*!
  * Bootswatch v3.1.1
  * Homepage: http://bootswatch.com
@@ -5629,7 +5629,8 @@ button.close {
 }
 .navbar {
   font-size: 18px;
-  font-family: Arciform, "News Cycle", "Arial Narrow Bold", sans-serif;
+  /*font-family: Arciform, "News Cycle", "Arial Narrow Bold", sans-serif;*/
+  font-family: Arciform, sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   text-shadow: rgba(0,0,0,0.3) 3px 3px 6px; /*text-shadow: rgba(0,0,0,0.3) 3px 3px 6px;*/
@@ -5824,7 +5825,7 @@ button.close {
 .jumbotron h4,
 .jumbotron h5,
 .jumbotron h6 {
-  font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+  /*font-family: "News Cycle", "Arial Narrow Bold", sans-serif;*/
   font-weight: 700;
   color: #000;
 }
