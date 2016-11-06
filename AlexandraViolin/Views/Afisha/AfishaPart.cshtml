@@ -2,7 +2,7 @@
 
 @foreach (var photo in Model)
 {
-    <a href="@photo.path" data-size="@photo.size" data-med="@photo.path" data-med-size="@photo.size" class="col-lg-4 dayday">
+    <a href="@photo.path" data-size="@photo.size" data-med="@photo.path" data-med-size="@photo.size" class="col-lg-3 dayday">
         <img src="@photo.pathm" class="img-responsive" alt="@photo.alt" style="opacity: 0.2; position: absolute;">
         <div class="date">@photo.eventDay<span>@photo.eventMonthYear</span></div>
         <div class="event">
