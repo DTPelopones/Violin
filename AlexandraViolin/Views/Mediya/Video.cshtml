@@ -5,32 +5,9 @@
 @section metatags
 {
     <meta name="keywords" content="концерты Александра Федотова, концерты скрипка, видео с Александра Федотова" />
-
-    <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
-
-    <script>
-        function onYouTubeIframeAPIReady() {
-            var temp = $("iframe.yt_players");
-            for (var i = 0; i < temp.length; i++) {
-                new YT.Player($(temp[i]).attr('id'), {
-                    events: {
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
-        }
-
-        var activePlayer;
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PLAYING) {
-                if (activePlayer && activePlayer != event.target) {
-                    activePlayer.pauseVideo();
-                }
-                activePlayer = event.target;
-            }
-        }
-    </script>
 }
+
+<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
 
 <div class="row">
     <div class="col-md-4 portfolio-item">
@@ -78,3 +55,26 @@
         <p class="pvideo">Сезар-Квинтет Д. Шостакович Квинтет соль минор сочинение 75, 1, 2, 3 части</p>
     </div>
 </div>
+
+<script>
+        function onYouTubeIframeAPIReady() {
+            var temp = $("iframe.yt_players");
+            for (var i = 0; i < temp.length; i++) {
+                new YT.Player($(temp[i]).attr('id'), {
+                    events: {
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+        }
+
+        var activePlayer;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                if (activePlayer && activePlayer != event.target) {
+                    activePlayer.pauseVideo();
+                }
+                activePlayer = event.target;
+            }
+        }
+</script>
