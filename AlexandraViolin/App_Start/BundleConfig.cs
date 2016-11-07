@@ -42,8 +42,8 @@ namespace AlexandraViolin
                         "~/js/violin.js"
                         ));
 
-            bundles.Add(new ScriptBundle("~/bundles/mediya").Include(
-                        "~/js/mediya.js"
+            bundles.Add(new ScriptBundle("~/bundles/medi").Include(
+                        "~/js/medi.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/photoswipejs").Include(

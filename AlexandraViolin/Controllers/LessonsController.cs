@@ -43,7 +43,7 @@ namespace AlexandraViolin.Controllers
                             smtp.Port = 587;
                             smtp.UseDefaultCredentials = true;
                             smtp.Credentials = new System.Net.NetworkCredential
-                            ("dv.taranov@gmail.com", "Tarenovdv");
+                            ("dv.taranov@gmail.com", "");
                             smtp.EnableSsl = true;
                             smtp.Send(mail);
                             ViewBag.sendingProgress = "display: none;";

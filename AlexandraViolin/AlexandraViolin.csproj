@@ -407,7 +407,7 @@
     <Content Include="img\Studio\Studio_9m.jpg" />
     <Content Include="img\youtube-play.png" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\mediya.js" />
+    <Content Include="js\medi.js" />
     <Content Include="js\photoswipe.js" />
     <Content Include="js\violin.js" />
     <Content Include="App_Data\Backups\AlexandraViolin.bak" />
