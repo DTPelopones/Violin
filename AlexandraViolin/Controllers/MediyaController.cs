@@ -31,17 +31,18 @@ namespace AlexandraViolin.Controllers
         
         public ActionResult SingleItem()
         {
-            return View();
+            return RedirectToAction("Index");
+            //return View();
         }
 
         public ActionResult Audio()
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Video()
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult Index()
