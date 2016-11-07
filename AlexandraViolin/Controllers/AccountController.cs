@@ -11,7 +11,8 @@ namespace AlexandraViolin.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index","Home");
+            //return View();
         }
 
         [HttpPost]

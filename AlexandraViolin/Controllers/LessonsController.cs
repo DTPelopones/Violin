@@ -15,7 +15,8 @@ namespace AlexandraViolin.Controllers
         public ActionResult Feedback()
         {
             ViewBag.sendingProgress = "display: none;";
-            return View();
+            return RedirectToAction("Index");
+            //return View();
         }
 
         [HttpPost]
@@ -42,7 +43,7 @@ namespace AlexandraViolin.Controllers
                             smtp.Port = 587;
                             smtp.UseDefaultCredentials = true;
                             smtp.Credentials = new System.Net.NetworkCredential
-                            ("dv.taranov@gmail.com", "");
+                            ("dv.taranov@gmail.com", "Tarenovdv");
                             smtp.EnableSsl = true;
                             smtp.Send(mail);
                             ViewBag.sendingProgress = "display: none;";
@@ -84,8 +85,9 @@ namespace AlexandraViolin.Controllers
 
         public ActionResult Error()
         {
-            ViewBag.sendingProgress = "display: none;";
-            return View();
+            ViewBag.sendingProgress = "display: none;"; 
+            return RedirectToAction("Index"); 
+            //return View();
         }
     }
 }
