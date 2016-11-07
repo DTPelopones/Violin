@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-md-6 portfolio-item">
-        <audio id="player" controls preload="metadata">
+        <audio controls preload="metadata">
             <source src="../audio/Wega Violins.ogg" type="audio/ogg">
             <source src="../audio/Wega Violins.mp3" type="audio/mp3">
         </audio>
@@ -22,14 +22,4 @@
         </audio>
         <p class="pvideo"><b>Сырба - </b><small>Скрипичный дуэт: Александра Федотова и Эвелина Сорокина</small></p>
     </div>
-</div> 
-
-<script>
-    var activeAudio;
-    $("audio").on("play", function () {
-        if (activeAudio && activeAudio != this) {
-            activeAudio.pause();
-        }
-        activeAudio = this;
-    });
-</script> 
+</div>

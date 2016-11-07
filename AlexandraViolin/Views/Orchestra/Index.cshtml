@@ -9,7 +9,12 @@
     <meta name="keywords" content="Московская Камерата, оркестр, Камерный оркестр" />
     @Styles.Render("~/bundles/css/violin")
     @Styles.Render("~/bundles/photoswipecss")
+}
+
+@section head
+{
     @Scripts.Render("~/bundles/photoswipejs")
+    @Scripts.Render("~/bundles/jqueryunobtrusiveajax")
 }
 
 <div class="container">

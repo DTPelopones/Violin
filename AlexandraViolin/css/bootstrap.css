@@ -36,6 +36,19 @@ html {
     left: calc(50% - 32px);top: -64px;
 }
 
+.fa-facebook {
+    background: url(../img/facebook-icon.svg);
+}
+
+.fa-instagram {
+    background: url(../img/instagram-icon.svg);
+}
+
+.fa-facebook,
+.fa-instagram {
+    background-size: contain;
+}
+
 body {
   margin: 0;
 }
@@ -2428,10 +2441,6 @@ input[type="button"].btn-block {
 @font-face {
   font-family: Arciform;
   src: url('../fonts/Arciform.otf');
-}
-@font-face {
-  font-family: FontAwesome;
-  src: url('../fonts/fontawesome-webfont.ttf');
 }
 .glyphicon {
   position: relative;

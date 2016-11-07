@@ -5,10 +5,14 @@
 @section metatags
 {
     <meta name="keywords" content="Александра Федотова, афиша, камерный оркестр, Московская камерата" />
-    @Scripts.Render("~/bundles/photoswipejs")
     @Styles.Render("~/bundles/photoswipecss")
-
     @Styles.Render("~/bundles/css/violin")
+}
+
+@section head
+{
+    @Scripts.Render("~/bundles/photoswipejs")
+    @Scripts.Render("~/bundles/jqueryunobtrusiveajax")    
 }
 
 <div class="container">

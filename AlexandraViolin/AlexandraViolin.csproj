@@ -209,7 +209,6 @@
     <Content Include="css\modern-business.css" />
     <Content Include="css\violin.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\About.jpg" />
@@ -315,7 +314,9 @@
     <Content Include="img\Concert\Concert_8m.jpg" />
     <Content Include="img\Concert\Concert_9.jpg" />
     <Content Include="img\Concert\Concert_9m.jpg" />
+    <Content Include="img\facebook-icon.svg" />
     <Content Include="img\Home.jpg" />
+    <Content Include="img\instagram-icon.svg" />
     <Content Include="img\Lesson\LessonMain.jpg" />
     <Content Include="img\Lesson\Lesson_0.jpg" />
     <Content Include="img\Lesson\Lesson_0m.jpg" />
@@ -404,15 +405,12 @@
     <Content Include="img\Studio\Studio_8m.jpg" />
     <Content Include="img\Studio\Studio_9.jpg" />
     <Content Include="img\Studio\Studio_9m.jpg" />
+    <Content Include="img\youtube-play.png" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\mediya.js" />
     <Content Include="js\photoswipe.js" />
     <Content Include="js\violin.js" />
     <Content Include="App_Data\Backups\AlexandraViolin.bak" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
     <Content Include="audio\Wega Violins.ogg" />
     <Content Include="audio\Сырба.ogg" />
     <None Include="Properties\PublishProfiles\FTP.pubxml" />

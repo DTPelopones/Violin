@@ -7,74 +7,49 @@
     <meta name="keywords" content="концерты Александра Федотова, концерты скрипка, видео с Александра Федотова" />
 }
 
-<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
-
 <div class="row">
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player1" src="http://www.youtube.com/embed/0Hd2cAWkiE8?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=2" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="0Hd2cAWkiE8"></div>
         <p class="pvideo">J.S. Bach - Concerto d-moll for two violins and string, BWV 1043 - I, II</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player2" src="http://www.youtube.com/embed/hH_UNN7DtmE?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="hH_UNN7DtmE"></div>
         <p class="pvideo">J.S. Bach - Concerto d-moll for two violins and string, BWV 1043 - II, III</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player3" src="http://www.youtube.com/embed/df9PPJbXCCM?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="df9PPJbXCCM"></div>
         <p class="pvideo">Концерт Александры Федотовой и Анастасии Соколовой в Усадьбе Асеевых</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player4" src="http://www.youtube.com/embed/-_A3Cmp7GNM?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="-_A3Cmp7GNM"></div>
         <p class="pvideo">I. Frolov - Joke-Souvenir</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player5" src="http://www.youtube.com/embed/M8juBcT9S40?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="M8juBcT9S40"></div>
         <p class="pvideo">I. Frolov - Divertimento Игорь Фролов - Дивертисмент</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player6" src="http://www.youtube.com/embed/wgTUyWN-d4k?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="wgTUyWN-d4k"></div>
         <p class="pvideo">Сезар квинтет, МГК Ф Шнитке</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player7" src="http://www.youtube.com/embed/zlGfwV7C-JQ?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="zlGfwV7C-JQ"></div>
         <p class="pvideo">С. Танеев, квинтет Сезар квинтет, 22 04 2008</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player8" src="http://www.youtube.com/embed/2QkMYWdFhqQ?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="2QkMYWdFhqQ"></div>
         <p class="pvideo">Сезар квинтет Д. Шостакович квинтет соль минор, сочинение 75, часть 4, 5</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player9" src="http://www.youtube.com/embed/UTU5v80a5Oc?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="UTU5v80a5Oc"></div>
         <p class="pvideo">Сезар квинтет С. Франк квинтет фа минор, FWV7, часть 1, 2</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player10" src="http://www.youtube.com/embed/knx-CNY-DFg?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="knx-CNY-DFg"></div>
         <p class="pvideo">Сезар Квинтет С. Франк Квинтет фа минор, FWV7, часть 3 (Дворжак Квинтет 3-я часть - бис)</p>
     </div>
     <div class="col-md-4 portfolio-item">
-        <iframe class="yt_players" id="player11" src="http://www.youtube.com/embed/_Wq-w2fNGGY?rel=0&wmode=1paque&enablejsapi=1;showinfo=1;controls=1" frameborder="0" allowfullscreen></iframe>
+        <div class="youtube" data-id="_Wq-w2fNGGY"></div>
         <p class="pvideo">Сезар-Квинтет Д. Шостакович Квинтет соль минор сочинение 75, 1, 2, 3 части</p>
     </div>
 </div>
-
-<script>
-        function onYouTubeIframeAPIReady() {
-            var temp = $("iframe.yt_players");
-            for (var i = 0; i < temp.length; i++) {
-                new YT.Player($(temp[i]).attr('id'), {
-                    events: {
-                        'onStateChange': onPlayerStateChange
-                    }
-                });
-            }
-        }
-
-        var activePlayer;
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PLAYING) {
-                if (activePlayer && activePlayer != event.target) {
-                    activePlayer.pauseVideo();
-                }
-                activePlayer = event.target;
-            }
-        }
-</script>

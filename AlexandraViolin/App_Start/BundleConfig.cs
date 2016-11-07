@@ -42,6 +42,10 @@ namespace AlexandraViolin
                         "~/js/violin.js"
                         ));
 
+            bundles.Add(new ScriptBundle("~/bundles/mediya").Include(
+                        "~/js/mediya.js"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/photoswipejs").Include(
                         "~/PhotoSwipe/photoswipe.min.js",
                         "~/PhotoSwipe/photoswipe-ui-default.min.js"
@@ -72,7 +76,8 @@ namespace AlexandraViolin
                       ));
 
             bundles.Add(new StyleBundle("~/bundles/css/violin").Include(
-                      "~/css/violin.css"
+                      "~/css/violin.css",
+                      new CssRewriteUrlTransform()
                       ));
 
             BundleTable.EnableOptimizations = true;

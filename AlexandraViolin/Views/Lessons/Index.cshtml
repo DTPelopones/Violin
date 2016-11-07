@@ -5,10 +5,16 @@
 @section metatags
 {
     <meta name="keywords" content="Александра Федотова, уроки на скрипке, репетитор скрипка, обучение игры на скрипке, учиться скрипка, репетитор, уроки вдохновения, обучение скрипка" />
-    @Scripts.Render("~/bundles/photoswipejs")
     @Styles.Render("~/bundles/photoswipecss")
-
     @Styles.Render("~/bundles/css/violin")
+}
+
+@section head
+{
+    @Scripts.Render("~/bundles/photoswipejs")
+    @Scripts.Render("~/bundles/jqueryunobtrusiveajax")
+    @Scripts.Render("~/bundles/jqueryvalidate")
+    @Scripts.Render("~/bundles/jqueryvalidateunobtrusive")
 }
 
 <div class="container">

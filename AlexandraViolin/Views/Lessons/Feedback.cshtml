@@ -1,24 +1,5 @@
 ﻿@model AlexandraViolin.Models.EmailModel
 
-@section metatags
-{
-    <script>
-        function checkParams() {
-            var name = $('#FromName').val();
-            var email = $('#FromEmail').val();
-
-            if(name.length != 0 && email.length != 0) {
-                $('#submit').removeAttr('disabled');
-            } else {
-                $('#submit').attr('disabled', 'disabled');
-            }
-        }
-        window.onload = function () {
-            checkParams();
-        }
-    </script>
-}
-
 @using (Ajax.BeginForm(
                             "Feedback",
                             "Lessons",
@@ -57,4 +38,20 @@
                 </span>
             </div>
         </div>
+
+        <script>
+            function checkParams() {
+                var name = $('#FromName').val();
+                var email = $('#FromEmail').val();
+
+                if(name.length != 0 && email.length != 0) {
+                    $('#submit').removeAttr('disabled');
+                } else {
+                    $('#submit').attr('disabled', 'disabled');
+                }
+            }
+            window.onload = function () {
+                checkParams();
+            }
+        </script>
 }
