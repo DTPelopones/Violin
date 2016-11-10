@@ -29,11 +29,11 @@ namespace AlexandraViolin.Controllers
             return View(photoes);
         }
         
-        public ActionResult SingleItem()
-        {
-            return RedirectToAction("Index");
-            //return View();
-        }
+        //public ActionResult SingleItem()
+        //{
+        //    return RedirectToAction("Index");
+        //    //return View();
+        //}
 
         public ActionResult Audio()
         {

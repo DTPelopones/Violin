@@ -9,10 +9,10 @@ namespace AlexandraViolin.Controllers
             return View();
         }
 
-        public ActionResult Post()
-        {
-            return RedirectToAction("Index");
-            //return View();
-        }
+        //public ActionResult Post()
+        //{
+        //    return RedirectToAction("Index");
+        //    //return View();
+        //}
     }
 }

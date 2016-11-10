@@ -454,6 +454,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />
+    <Folder Include="Views\Sitemap\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
