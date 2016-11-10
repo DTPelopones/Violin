@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
     var activeHeight = 450,
-        navbar = $('.navbar'),
         navBrand = $('.navbar-brand'),
         navItem = $('.navbar-nav a'),
         padding = 9.5,
@@ -16,7 +15,9 @@
 
             if (scale > 0) {
                 currPadding = (padding + (scale * 10)) + 'px';
-                currFontSize = (fontSize + (scale * 2)) + 'px';
+                if (screenWidth > 991) {
+                    currFontSize = (fontSize + (scale * 2)) + 'px';
+                }
             }
             navItem.css({ 'padding-top': currPadding, 'padding-bottom': currPadding, 'font-size': currFontSize });
             navBrand.css({ 'padding-top': currPadding, 'padding-bottom': currPadding });
