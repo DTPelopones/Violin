@@ -10,7 +10,7 @@
 
 .demo-gallery a:hover,
 .portfolio-item a:hover {
-    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.6);
 }
 
 .demo-gallery a:hover,
@@ -29,6 +29,8 @@ a.crop
   /*border:1px solid #ccc;*/
   width:275px;
   height:200px;
+
+  box-shadow: 0 0 7px 1px rgba(0,0,0,0.6);
 }
 a.cropOrchestra
 {
@@ -40,6 +42,8 @@ a.cropOrchestra
   /*border:1px solid #ccc;*/
   width:275px;
   height:200px;
+
+  box-shadow: 0 0 7px 1px rgba(0,0,0,0.6);
 }
 a.cropLesson
 {
@@ -51,6 +55,8 @@ a.cropLesson
   /*border:1px solid #ccc;*/
   width:275px;
   height:200px;
+
+  box-shadow: 0 0 7px 1px rgba(0,0,0,0.6);
 }
 img.crop 
 {
