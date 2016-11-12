@@ -280,3 +280,10 @@ header {
 
 }
 
+@media (min-width: 992px) {
+    #media-video .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
