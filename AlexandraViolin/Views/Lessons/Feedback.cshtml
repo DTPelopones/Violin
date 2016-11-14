@@ -1,57 +1,82 @@
 ﻿@model AlexandraViolin.Models.EmailModel
 
-@using (Ajax.BeginForm(
-                            "Feedback",
-                            "Lessons",
-                            new AjaxOptions
-                            {
-                                HttpMethod = "post",
-                                UpdateTargetId = "emailSend",
-                                LoadingElementId = "sendingProgress",
-                                InsertionMode = InsertionMode.Replace,
-                                OnSuccess = "MailSended"
-                            }))
-{
-        <div id="emailSend" class="row">
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.FromName)
-                @Html.TextBoxFor(model => model.FromName, new { @class = "form-control", @onkeyup = "checkParams()" })
-            </div>
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.FromEmail)
-                @Html.TextBoxFor(model => model.FromEmail, new { @class = "form-control", @onkeyup = "checkParams()", @onload = "checkParams()" }) 
-                @Html.ValidationMessageFor(model => model.FromEmail, "", new { @class = "text-danger" }) 
-            </div>
-            <div class="form-group col-lg-4">
-                @Html.LabelFor(model => model.Phone)
-                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
-            </div>
-            <div class="form-group col-lg-12">
-                @Html.LabelFor(model => model.Body)
-                @Html.TextAreaFor(model => model.Body, new { @class = "form-control" })
-            </div>
-            <div class="form-group col-lg-12">
-                <input id="submit" type="submit" class="btn btn-primary" value="Отправить" />
-                <span id="sendingProgress" style="@ViewBag.sendingProgress">
-                    идет отправка сообщения...
-                    <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
-                </span>
-            </div>
+<div id="emailSend" class="row">
+    @using (Ajax.BeginForm(
+                           "Feedback",
+                           "Lessons",
+                           new AjaxOptions
+                           {
+                               HttpMethod = "post",
+                               LoadingElementId = "sendingProgress",
+                               UpdateTargetId = "emailMessage",
+                               InsertionMode = InsertionMode.Replace,
+                               OnSuccess = "MailSended",
+                               OnComplete = "MailCompleted",
+                               OnFailure = "MailError"
+                           }))
+    {
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.FromName)
+            @Html.TextBoxFor(model => model.FromName, new { @class = "form-control", @onkeyup = "checkFormsInput()" })
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.FromEmail)
+            @Html.TextBoxFor(model => model.FromEmail, new { @class = "form-control", @onkeyup = "checkFormsInput()", @onload = "checkFormsInput()" })
+            @Html.ValidationMessageFor(model => model.FromEmail, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group col-lg-4">
+            @Html.LabelFor(model => model.Phone)
+            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control" })
+        </div>
+        <div class="form-group col-lg-12">
+            @Html.LabelFor(model => model.Body)
+            @Html.TextAreaFor(model => model.Body, new { @class = "form-control", @onkeyup = "checkFormsInput()" })
         </div>
 
-        <script>
-            function checkParams() {
-                var name = $('#FromName').val();
-                var email = $('#FromEmail').val();
+        <div class="form-group col-lg-12">
+            <input id="submit" type="submit" class="btn btn-primary" value="Отправить" />
+            <span id="sendingProgress" style="display: none;">
+                отправка сообщения...
+                <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
+            </span>
+            <span id="emailMessage" style="display: none;"/>
+        </div>
+    }
+</div>        
 
-                if(name.length != 0 && email.length != 0) {
-                    $('#submit').removeAttr('disabled');
-                } else {
-                    $('#submit').attr('disabled', 'disabled');
-                }
-            }
-            window.onload = function () {
-                checkParams();
-            }
-        </script>
-}
+
+<script>
+    function checkFormsInput() {
+        var name = $('#FromName').val();
+        var email = $('#FromEmail').val();
+        var body = $('#Body').val();
+
+        if (name.length != 0 && email.length != 0 && body.length != 0) {
+            $('#submit').removeAttr('disabled');
+        } else {
+            $('#submit').attr('disabled', 'disabled');
+        }
+    }
+    function clearMailForm() {
+        $('#FromName').val('');
+        $('#FromEmail').val('');
+        $('#Body').val('');
+    }
+    function MailSended() {
+        clearMailForm();
+        sendMessage();
+    }
+    function MailCompleted() {
+        checkFormsInput();
+    }
+    function MailError() {
+        sendMessage();
+    }
+    function sendMessage(){
+        setTimeout(function () { $('#emailMessage').css('display', 'block'); }, 100); 
+        setTimeout(function () { $('#emailMessage').css('display', 'none'); }, 5000); 
+    }
+    window.onload = function () {
+        checkFormsInput();
+    }
+</script>

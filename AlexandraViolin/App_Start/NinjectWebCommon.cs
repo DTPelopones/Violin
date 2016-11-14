@@ -71,6 +71,7 @@ namespace AlexandraViolin.App_Start
             connectStringBuilder.UserID = "avi";
             connectStringBuilder.Password = "test1";
 
+
             connectStringBuilder.ConnectTimeout = 30;
             connectStringBuilder.AsynchronousProcessing = true;
             connectStringBuilder.MultipleActiveResultSets = true;

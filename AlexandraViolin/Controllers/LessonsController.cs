@@ -12,13 +12,6 @@ namespace AlexandraViolin.Controllers
     {
         int pageSize = 24;
 
-        public ActionResult Feedback()
-        {
-            ViewBag.sendingProgress = "display: none;";
-            return RedirectToAction("Index");
-            //return View();
-        }
-
         [HttpPost]
         public ActionResult Feedback(EmailModel model)
         {
@@ -30,7 +23,7 @@ namespace AlexandraViolin.Controllers
                     {
                         MailMessage mail = new MailMessage();
                         model.To = "dv.taranov@gmail.com";
-                        model.Subject = "Письмо от " + model.FromName + " <" + model.FromEmail + "> с сайта afedotova.somee.com";
+                        model.Subject = "Письмо от " + model.FromName + " <" + model.FromEmail + "> с сайта aleksandrafedotova.ru";
                         mail.To.Add(model.To);
                         mail.To.Add("fedotova.violin@gmail.com");
                         mail.From = new MailAddress(model.FromEmail, model.FromName);
@@ -46,17 +39,16 @@ namespace AlexandraViolin.Controllers
                             ("dv.taranov@gmail.com", "");
                             smtp.EnableSsl = true;
                             smtp.Send(mail);
-                            ViewBag.sendingProgress = "display: none;";
                         }
-                        return PartialView("Feedback");
+                        model.FeedbackMessage = "Сообщение отправлено.";
                     }
                 }
             }
             catch (Exception)
             {
-                return View("Error");
+                model.FeedbackMessage = "Сообщение не отправлено. Пожалуйста, повторите отправку!";
             }
-            return View(); 
+            return PartialView("ErrorPartEmail", model);
         }
 
         public ActionResult Index(int? page)
@@ -81,13 +73,6 @@ namespace AlexandraViolin.Controllers
                 return PartialView("LessonPart", photoes);
             }
             return View(photoes);
-        }
-
-        public ActionResult Error()
-        {
-            ViewBag.sendingProgress = "display: none;"; 
-            return RedirectToAction("Index"); 
-            //return View();
         }
     }
 }

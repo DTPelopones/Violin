@@ -410,7 +410,6 @@
     <Content Include="js\medi.js" />
     <Content Include="js\photoswipe.js" />
     <Content Include="js\violin.js" />
-    <Content Include="App_Data\Backups\AlexandraViolin.bak" />
     <Content Include="audio\Wega Violins.ogg" />
     <Content Include="audio\Сырба.ogg" />
     <None Include="Properties\PublishProfiles\FTP.pubxml" />
@@ -426,7 +425,9 @@
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -451,8 +452,10 @@
     <Content Include="Views\Error\Forbidden.cshtml" />
     <Content Include="Views\PhotoSwipe\PhotoSwipePart.cshtml" />
     <Content Include="Views\Afisha\AfishaPart.cshtml" />
+    <Content Include="Views\Lessons\ErrorPartEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\Backups\" />
     <Folder Include="Context\" />
     <Folder Include="Views\Sitemap\" />
   </ItemGroup>
