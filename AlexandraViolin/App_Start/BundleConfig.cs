@@ -55,6 +55,13 @@ namespace AlexandraViolin
                     "~/js/photoswipe.js"
                         ));
 
+            bundles.Add(new ScriptBundle("~/bundles/videojs").Include(
+                        "~/js/youtube-video-player.jquery.js",
+                        "~/js/jquery.mousewheel.js",
+                        "~/js/perfect-scrollbar.js",
+                        "~/js/jquery.powertip.js"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/bar-ui").Include(
                     "~/Scripts/bar-ui.js"
                     ));
@@ -86,6 +93,30 @@ namespace AlexandraViolin
             bundles.Add(new StyleBundle("~/bundles/css/violin").Include(
                       "~/css/violin.css",
                       new CssRewriteUrlTransform()
+                      ));
+
+            StyleBundle videocss = new StyleBundle("~/bundles/css/videocss");
+
+            videocss.Include(
+                      "~/css/youtube-video-player.css",
+                      new CssRewriteUrlTransform()
+                      );
+
+            videocss.Include(
+                      "~/css/perfect-scrollbar.css",
+                      new CssRewriteUrlTransform()
+                      );
+
+            videocss.Include(
+                      "~/css/jquery.powertip-dark.css",
+                      new CssRewriteUrlTransform()
+                      );
+
+            bundles.Add(videocss);
+
+            bundles.Add(new StyleBundle("~/bundles/material-icons", "https://fonts.googleapis.com/icon?family=Material+Icons")
+                        .Include(
+                        "~/css/material-icons-debug.css"
                       ));
 
             bundles.Add(new StyleBundle("~/bundles/css/bar-ui").Include(

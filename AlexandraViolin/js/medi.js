@@ -1,5 +1,5 @@
 ﻿/* Video */
-var tag = document.createElement('script');
+/*var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -55,11 +55,11 @@ function onPlayerStateChange(event) {
         }
         activePlayer = event.target;
     }
-}
+}*/
 
 // Tabs
 $(document).ready(function () {
-
+    
     $('#mediaTab a').click(function (e) {
         var href = $(this).attr('href');
         sessionStorage.setItem('activeTab', href);
@@ -69,6 +69,7 @@ $(document).ready(function () {
         var href = sessionStorage.getItem('activeTab');
         $('#mediaTab a[href="' + href + '"]').tab('show');
     }
+    
     /* Audio */
     var activeAudio;
     $('audio').on('play', function () {
