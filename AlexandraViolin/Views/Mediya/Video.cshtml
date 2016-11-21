@@ -7,53 +7,79 @@
     <meta name="keywords" content="концерты Александра Федотова, концерты скрипка, видео с Александра Федотова" />
 }
 
-<div class="row">
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="0Hd2cAWkiE8"></div>
-        <p class="pvideo">J.S. Bach - Concerto d-moll for two violins and string, BWV 1043 - I, II</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="hH_UNN7DtmE"></div>
-        <p class="pvideo">J.S. Bach - Concerto d-moll for two violins and string, BWV 1043 - II, III</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="df9PPJbXCCM"></div>
-        <p class="pvideo">Концерт Александры Федотовой и Анастасии Соколовой в Усадьбе Асеевых</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="-_A3Cmp7GNM"></div>
-        <p class="pvideo">I. Frolov - Joke-Souvenir</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="M8juBcT9S40"></div>
-        <p class="pvideo">I. Frolov - Divertimento Игорь Фролов - Дивертисмент</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="wgTUyWN-d4k"></div>
-        <p class="pvideo">Сезар квинтет, МГК Ф Шнитке</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="zlGfwV7C-JQ"></div>
-        <p class="pvideo">С. Танеев, квинтет Сезар квинтет, 22 04 2008</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="2QkMYWdFhqQ"></div>
-        <p class="pvideo">Сезар квинтет Д. Шостакович квинтет соль минор, сочинение 75, часть 4, 5</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="UTU5v80a5Oc"></div>
-        <p class="pvideo">Сезар квинтет С. Франк квинтет фа минор, FWV7, часть 1, 2</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="knx-CNY-DFg"></div>
-        <p class="pvideo">Сезар Квинтет С. Франк Квинтет фа минор, FWV7, часть 3 (Дворжак Квинтет 3-я часть - бис)</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="_Wq-w2fNGGY"></div>
-        <p class="pvideo">Сезар-Квинтет Д. Шостакович Квинтет соль минор сочинение 75, 1, 2, 3 части</p>
-    </div>
-    <div class="col-md-4 portfolio-item">
-        <div class="youtube" data-id="IPRweew4_bw"></div>
-        <p class="pvideo">Maurice Ravel "Tzigane"</p>
-    </div>
-</div>
+@Styles.Render("~/bundles/css/videocss")
+@Styles.Render("~/bundles/material-icons")
+
+@Scripts.Render("~/bundles/videojs")
+
+<div id="video_player"></div>
+
+<script>
+    $(document).ready(function () {
+        var init_player;
+        $('#mediaTab a[href="#media-video"]').click(function (e) {
+            if (!init_player) {
+                setTimeout(initPlayer, 150);
+                init_player = true;
+            }
+        });
+
+	    $('#mediaTab a').click(function (e) {
+	        var href = $(this).attr('href');
+	        sessionStorage.setItem('activeTab', href);
+	    });
+
+	    if (sessionStorage.getItem('activeTab')) {
+	        var href = sessionStorage.getItem('activeTab');
+	        $('#mediaTab a[href="' + href + '"]').tab('show');
+	        if (href == '#media-video') {
+	            setTimeout(initPlayer, 150);
+	            init_player = true;
+	        }
+	    }
+    });
+
+    function initPlayer() {
+        var type = ($(document).width() > 991) ? 'vertical' : 'horizontal';
+        $('#video_player').youtube_video({
+            playlist: 'PLC6V-5RHrLMe7_GYbXrgVrv_KLdFhb1-8', //'',PLWz5rJ2EKKc8jQTUYvIfqA9lMvSGQWtte
+            max_results: 10,
+            force_hd: true,
+            playlist_type: type,
+            share_control: false,
+            youtube_link_control: false,
+            hide_youtube_logo: true,
+            now_playing_text: 'Воспроизводится',
+            load_more_text: 'Ещё...',
+            mute_off_title: 'Включить звук',
+            mute_on_title: 'Отключение звука',
+            share_title: 'Поделиться',
+            open_in_youtube_title: 'Смотреть это видео на youtube.com',
+            prev_video_title: 'Предыдущее видео',
+            next_video_title: 'Следующее видео',
+            hide_playlist_title: 'Скрыть плэйлист',
+            show_playlist_title: 'Показать плэйлист',
+            enter_fullscreen_title: 'Во весь экран',
+            exit_fullscreen_title: 'Выход из полноэкранного режима'
+        });
+
+        $('.yesp-icon[class*="yesp-icon-"]').each(function () {
+            $(this).addClass('material-icons');
+            $(this).not('.yesp-icon-play').powerTip({
+                smartPlacement: true
+            });
+        });
+
+        $('.yesp-icon[class*="yesp-icon-"]').on({
+            powerTipPreRender: function () {
+                // generate some dynamic content
+                $(this).data('powertip', $(this).data('title'));
+            }
+        });
+
+        $('.yesp-icon[class*="yesp-icon-"]').not('.yesp-icon-play').on('click', function () {
+            $.powerTip.hide();
+            $.powerTip.show(this);
+        });
+    }
+</script>

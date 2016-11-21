@@ -59,6 +59,7 @@ function onPlayerStateChange(event) {
 
 // Tabs
 $(document).ready(function () {
+    /*
     $('#mediaTab a').click(function (e) {
         var href = $(this).attr('href');
         sessionStorage.setItem('activeTab', href);
@@ -68,6 +69,7 @@ $(document).ready(function () {
         var href = sessionStorage.getItem('activeTab');
         $('#mediaTab a[href="' + href + '"]').tab('show');
     }
+    */
     /* Audio */
     var activeAudio;
     $('audio').on('play', function () {
