@@ -55,6 +55,14 @@ namespace AlexandraViolin
                     "~/js/photoswipe.js"
                         ));
 
+            bundles.Add(new ScriptBundle("~/bundles/bar-ui").Include(
+                    "~/Scripts/bar-ui.js"
+                    ));
+
+            bundles.Add(new ScriptBundle("~/bundles/soundmanager2").Include(
+                    "~/Scripts/soundmanager2-nodebug-jsmin.js"
+                    ));
+
             StyleBundle photoswipecss = new StyleBundle("~/bundles/photoswipecss");
 
             photoswipecss.Include(
@@ -77,6 +85,11 @@ namespace AlexandraViolin
 
             bundles.Add(new StyleBundle("~/bundles/css/violin").Include(
                       "~/css/violin.css",
+                      new CssRewriteUrlTransform()
+                      ));
+
+            bundles.Add(new StyleBundle("~/bundles/css/bar-ui").Include(
+                      "~/css/bar-ui.css",
                       new CssRewriteUrlTransform()
                       ));
 

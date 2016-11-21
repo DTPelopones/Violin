@@ -1,4 +1,7 @@
 ﻿using System.Web.Mvc;
+using System.Net.Mail;
+using System;
+using AlexandraViolin.Models;
 
 namespace AlexandraViolin.Controllers
 {
@@ -8,5 +11,12 @@ namespace AlexandraViolin.Controllers
         {
             return View();
         }
-	}
+
+        [HttpPost]
+        public ActionResult Feedback(EmailModel model)
+        {
+            sendEmail(model);
+            return PartialView("ErrorPartEmail", model); 
+        }
+    }
 }

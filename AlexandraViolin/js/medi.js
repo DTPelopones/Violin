@@ -59,6 +59,7 @@ function onPlayerStateChange(event) {
 
 // Tabs
 $(document).ready(function () {
+
     $('#mediaTab a').click(function (e) {
         var href = $(this).attr('href');
         sessionStorage.setItem('activeTab', href);

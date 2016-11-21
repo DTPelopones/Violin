@@ -2,18 +2,18 @@
 
 <div id="emailSend" class="row">
     @using (Ajax.BeginForm(
-                           "Feedback", 
-                           "Lessons", 
+                           "Feedback",
+                           "Contact", 
                            new AjaxOptions
                            {
-                               HttpMethod = "post", 
-                               LoadingElementId = "sendingProgress", 
-                               UpdateTargetId = "emailMessage", 
-                               InsertionMode = InsertionMode.Replace, 
-                               OnSuccess = "MailSended", 
-                               OnComplete = "MailCompleted", 
-                               OnFailure = "MailError" 
-                           })) 
+                               HttpMethod = "post",
+                               LoadingElementId = "sendingProgress",
+                               UpdateTargetId = "emailMessage",
+                               InsertionMode = InsertionMode.Replace,
+                               OnSuccess = "MailSended",
+                               OnComplete = "MailCompleted",
+                               OnFailure = "MailError"
+                           }))
     {
         <div class="form-group col-lg-4">
             @Html.LabelFor(model => model.FromName)
@@ -39,7 +39,7 @@
                 отправка сообщения...
                 <img src="@Href("~/img/AjaxLoader.gif")" alt="Ожидание" />
             </span>
-            <span id="emailMessage" style="display: none;"/>
+            <span id="emailMessage" style="display: none;" />
         </div>
     }
 </div>        

@@ -4185,11 +4185,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .breadcrumb > li {
   display: inline-block;
+  margin-left: -6px;
 }
-.breadcrumb > li + li:before {
-  content: "/\00a0";
-  /*padding: 0 5px;*/
-  color: #cccccc;
+.breadcrumb .divider {
+  padding: 0 5px;
+  color: #999999;
 }
 .breadcrumb > .active {
   color: #999999;

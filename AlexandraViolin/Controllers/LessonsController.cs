@@ -15,40 +15,8 @@ namespace AlexandraViolin.Controllers
         [HttpPost]
         public ActionResult Feedback(EmailModel model)
         {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    if (Request.IsAjaxRequest())
-                    {
-                        MailMessage mail = new MailMessage();
-                        model.To = "dv.taranov@gmail.com";
-                        model.Subject = "Письмо от " + model.FromName + " <" + model.FromEmail + "> с сайта aleksandrafedotova.ru";
-                        mail.To.Add(model.To);
-                        mail.To.Add("fedotova.violin@gmail.com");
-                        mail.From = new MailAddress(model.FromEmail, model.FromName);
-                        mail.Subject = model.Subject;
-                        mail.Body = model.Body;
-
-                        using (SmtpClient smtp = new SmtpClient())
-                        {
-                            smtp.Host = "smtp.gmail.com";
-                            smtp.Port = 587;
-                            smtp.UseDefaultCredentials = true;
-                            smtp.Credentials = new System.Net.NetworkCredential
-                            ("dv.taranov@gmail.com", "");
-                            smtp.EnableSsl = true;
-                            smtp.Send(mail);
-                        }
-                        model.FeedbackMessage = "Сообщение отправлено.";
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                model.FeedbackMessage = "Сообщение не отправлено. Пожалуйста, повторите отправку!";
-            }
-            return PartialView("ErrorPartEmail", model);
+            sendEmail(model); 
+            return PartialView("ErrorPartEmail", model); 
         }
 
         public ActionResult Index(int? page)

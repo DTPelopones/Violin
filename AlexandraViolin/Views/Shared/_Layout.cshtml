@@ -1,4 +1,6 @@
-﻿@helper IsMenuSelected(string actionName, string controllerName, string className)
+﻿@using AlexandraViolin.HtmlHelpers
+
+@helper IsMenuSelected(string actionName, string controllerName, string className)
 {
     var conname = ViewContext.RouteData.Values["controller"].ToString().ToLower();
     if (conname == controllerName.ToLower())
@@ -23,7 +25,10 @@
     @Scripts.Render("~/bundles/bootstrapjs")
     @Scripts.Render("~/bundles/violin")
     @RenderSection("head", false)
-    
+
+    @Html.RenderStyles()
+    @Html.RenderJavaScripts()
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

@@ -6,13 +6,13 @@
 {
     <meta name="keywords" content="медиа Александра Федотова, фото Алксандра Федотова, видео Александра Федотова, музыка, скрипка, видео скрипка" />
     <meta name="description" content="Аудио, видео и фото с участием музыканта, педагога, скрипача Александры Федотовой - яркой представительницей русской скрипичной школы." />
-    @Styles.Render("~/bundles/css/violin")
+    @Styles.Render("~/bundles/css/violin") 
 }
 
 @section head
 {
-    @Scripts.Render("~/bundles/medi")
-    @Scripts.Render("~/bundles/jqueryunobtrusiveajax")
+    @Scripts.Render("~/bundles/medi") 
+    @Scripts.Render("~/bundles/jqueryunobtrusiveajax") 
 }
 
 <div class="container">
@@ -23,7 +23,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    @Html.ActionLink("Главная", "Index", "Home")
+                    @Html.ActionLink("Главная", "Index", "Home")<span class="divider">/</span>
                 </li>
                 <li class="active">Медиа</li>
             </ol>
@@ -31,38 +31,25 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <ul class="nav nav-tabs" id="mediaTab">
+            <ul class="nav nav-tabs" id="mediaTab" role="tablist">
                 <li class="active">
-                    <a data-toggle="tab" href="#media-photo">Фото</a>
+                    <a data-toggle="tab" role="tab" href="#Album">Фото</a>
                 </li>
                 <li>
-                    <a data-toggle="tab" href="#media-video">Видео</a>
+                    <a data-toggle="tab" role="tab" href="#Video">Видео</a>
                 </li>
                 <li>
-                    <a data-toggle="tab" href="#media-audio">Аудио</a>
+                    <a data-toggle="tab" role="tab" href="#Audio">Аудио</a>
                 </li>
             </ul>
             <div class="tab-content" id="mediaTabContent">
-                <div id="media-photo" class="tab-pane fade in active">
-                    <div class="row">
-                        <div class="col-md-4 portfolio-item">
-                            <a href="@Url.Action("Photo","Mediya", new { album = "Studio" })" class="crop">
-                                <img src="../img/Studio/Studio_12m.jpg" class="crop" alt="Обложка альбома Студио">
-                            </a>
-                            <h3>Студийный</h3>
-                        </div>
-                        <div class="col-md-4 portfolio-item">
-                            <a href="@Url.Action("Photo","Mediya", new { album = "Concert" })" class="crop">
-                                <img src="../img/Concert/Concert_3m.jpg" class="crop" alt="Обложка альбома Концерт">
-                            </a>
-                            <h3>Концертный</h3>
-                        </div>
-                    </div>
+                <div id="Album" class="tab-pane in active">
+                    @Html.Partial("Album")
                 </div>
-                <div id="media-video" class="tab-pane fade">
+                <div id="Video" class="tab-pane">
                     @Html.Partial("Video")
                 </div>
-                <div id="media-audio" class="tab-pane fade">
+                <div id="Audio" class="tab-pane">
                     @Html.Partial("Audio")
                 </div>
             </div>

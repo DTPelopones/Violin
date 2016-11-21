@@ -23,10 +23,10 @@
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    @Html.ActionLink("Главная", "Index", "Home")
+                    @Html.ActionLink("Главная", "Index", "Home")<span class="divider">/</span>
                 </li>
                 <li>
-                    @Html.ActionLink("Медиа", "Index", "Mediya")
+                    @Html.ActionLink("Медиа", "Index", "Mediya")<span class="divider">/</span>
                 </li>
                 <li class="active">@Model.First().album</li>
             </ol>

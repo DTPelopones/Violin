@@ -28,12 +28,6 @@ namespace AlexandraViolin.Controllers
             }
             return View(photoes);
         }
-        
-        //public ActionResult SingleItem()
-        //{
-        //    return RedirectToAction("Index");
-        //    //return View();
-        //}
 
         public ActionResult Audio()
         {
@@ -45,9 +39,29 @@ namespace AlexandraViolin.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Album()
+        {
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Index()
         {
             return View(); 
         }
+
+        //public ActionResult Album()
+        //{
+        //    return PartialView();
+        //}
+
+        //public ActionResult Audio()
+        //{
+        //    return PartialView();
+        //}
+
+        //public ActionResult Video()
+        //{
+        //    return PartialView();
+        //}
     }
 }

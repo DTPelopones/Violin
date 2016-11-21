@@ -192,6 +192,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelpers\ScriptHelper.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -204,6 +205,7 @@
     <Content Include="App_Data\SQL\fn_login.sql" />
     <Content Include="audio\Wega Violins.mp3" />
     <Content Include="audio\Сырба.mp3" />
+    <Content Include="css\bar-ui.css" />
     <Content Include="css\bootstrap-social.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\modern-business.css" />
@@ -421,10 +423,12 @@
     <Content Include="PhotoSwipe\photoswipe.css" />
     <Content Include="PhotoSwipe\photoswipe.min.js" />
     <Content Include="PhotoSwipe\default-skin\preloader.gif" />
+    <Content Include="Scripts\bar-ui.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\soundmanager2-nodebug-jsmin.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -453,10 +457,14 @@
     <Content Include="Views\PhotoSwipe\PhotoSwipePart.cshtml" />
     <Content Include="Views\Afisha\AfishaPart.cshtml" />
     <Content Include="Views\Lessons\ErrorPartEmail.cshtml" />
+    <Content Include="Views\Contact\Feedback.cshtml" />
+    <Content Include="Views\Contact\ErrorPartEmail.cshtml" />
+    <Content Include="Views\Mediya\Album.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Backups\" />
     <Folder Include="Context\" />
+    <Folder Include="img\audio\" />
     <Folder Include="Views\Sitemap\" />
   </ItemGroup>
   <ItemGroup>
