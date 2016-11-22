@@ -176,6 +176,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AudioController.cs" />
     <Compile Include="Controllers\BiographyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Controllers\MediyaController.cs" />
     <Compile Include="Controllers\AfishaController.cs" />
     <Compile Include="Controllers\OrchestraController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,8 +205,8 @@
   <ItemGroup>
     <Content Include="App_Data\SQL\CreateLogin.sql" />
     <Content Include="App_Data\SQL\fn_login.sql" />
-    <Content Include="audio\Wega Violins.mp3" />
-    <Content Include="audio\Сырба.mp3" />
+    <Content Include="Tracks\Wega Violins.mp3" />
+    <Content Include="Tracks\Сырба.mp3" />
     <Content Include="css\bar-ui.css" />
     <Content Include="css\bootstrap-social.css" />
     <Content Include="css\bootstrap.css" />
@@ -420,8 +422,8 @@
     <Content Include="js\perfect-scrollbar.js" />
     <Content Include="js\photoswipe.js" />
     <Content Include="js\violin.js" />
-    <Content Include="audio\Wega Violins.ogg" />
-    <Content Include="audio\Сырба.ogg" />
+    <Content Include="Tracks\Wega Violins.ogg" />
+    <Content Include="Tracks\Сырба.ogg" />
     <None Include="Properties\PublishProfiles\FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Publisher.pubxml" />
     <Content Include="js\youtube-video-player.jquery.js" />
@@ -469,6 +471,10 @@
     <Content Include="Views\Contact\Feedback.cshtml" />
     <Content Include="Views\Contact\ErrorPartEmail.cshtml" />
     <Content Include="Views\Mediya\Album.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Video\Video.cshtml" />
+    <Content Include="Views\Audio\Audio.cshtml" />
+    <Content Include="Views\Audio\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Backups\" />

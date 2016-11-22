@@ -16,7 +16,7 @@
             </h1>
             <ol class="breadcrumb">
                 <li>
-                    @Html.ActionLink("Главная", "Index", "Home")
+                    @Html.ActionLink("Главная", "Index", "Home")<span class="divider">/</span>
                 </li>
                 <li class="active">403</li>
             </ol>
@@ -38,7 +38,13 @@
                     @Html.ActionLink("ОРКЕСТР", "Index", "Orchestra") 
                 </li>
                 <li>
-                    @Html.ActionLink("МЕДИА", "Index", "Mediya") 
+                    @Html.ActionLink("ФОТО", "Index", "Mediya")
+                </li>
+                <li>
+                    @Html.ActionLink("ВИДЕО", "Index", "Video")
+                </li>
+                <li>
+                    @Html.ActionLink("АУДИО", "Index", "Audio") 
                 </li>
                 <li>
                     @Html.ActionLink("НОВОСТИ", "Index", "News") 

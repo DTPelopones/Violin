@@ -29,15 +29,15 @@ namespace AlexandraViolin.Controllers
             return View(photoes);
         }
 
-        public ActionResult Audio()
-        {
-            return RedirectToAction("Index");
-        }
+        //public ActionResult Audio()
+        //{
+        //    return RedirectToAction("Index");
+        //}
 
-        public ActionResult Video()
-        {
-            return RedirectToAction("Index");
-        }
+        //public ActionResult Video()
+        //{
+        //    return RedirectToAction("Index");
+        //}
 
         public ActionResult Album()
         {

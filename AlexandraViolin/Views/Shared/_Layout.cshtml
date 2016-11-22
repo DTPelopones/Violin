@@ -55,7 +55,13 @@
                         @Html.ActionLink("ОРКЕСТР", "Index", "Orchestra")
                     </li>
                     <li id="mediya" class="@IsMenuSelected("Index", "Mediya", "active")">
-                        @Html.ActionLink("МЕДИА", "Index", "Mediya")
+                        @Html.ActionLink("ФОТО", "Index", "Mediya")
+                    </li>
+                    <li id="video" class="@IsMenuSelected("Index", "Video", "active")">
+                        @Html.ActionLink("ВИДЕО", "Index", "Video")
+                    </li>
+                    <li id="audio" class="@IsMenuSelected("Index", "Audio", "active")">
+                        @Html.ActionLink("АУДИО", "Index", "Audio")
                     </li>
                     <li id="news" class="@IsMenuSelected("Index", "News", "active")">
                         @Html.ActionLink("НОВОСТИ", "Index", "News")
