@@ -205,6 +205,32 @@
   <ItemGroup>
     <Content Include="App_Data\SQL\CreateLogin.sql" />
     <Content Include="App_Data\SQL\fn_login.sql" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\arrow.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\cart.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\first.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\last.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\list.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\list2.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\loop.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\music.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\pause.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\play.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\shuffle.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\spinner.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\PNG\volume.png" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\arrow.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\cart.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\first.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\last.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\list.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\list2.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\loop.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\music.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\pause.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\play.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\shuffle.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\spinner.svg" />
+    <Content Include="img\audio\entypo-25px-ffffff\SVG\volume.svg" />
     <Content Include="Tracks\Wega Violins.mp3" />
     <Content Include="Tracks\Сырба.mp3" />
     <Content Include="css\bar-ui.css" />
@@ -479,7 +505,6 @@
   <ItemGroup>
     <Folder Include="App_Data\Backups\" />
     <Folder Include="Context\" />
-    <Folder Include="img\audio\" />
     <Folder Include="Views\Sitemap\" />
   </ItemGroup>
   <ItemGroup>
