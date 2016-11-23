@@ -293,7 +293,9 @@
  min-width: 2.8em;
  min-height: 2.8em;
 }
-
+.sm2-bar-ui .sm2-button-element.sm2-volume .sm2-button-bd {
+    min-width: 4.5em;
+}
 .sm2-bar-ui .sm2-inline-button {
  position: absolute;
  top: 0px;
@@ -569,7 +571,7 @@
 .sm2-volume-control,
 .sm2-volume-shade {
  background-position: 42% 50%;
- background-size: 56%;
+ background-size: 100%;
 }
 
 .volume-shade {
@@ -586,7 +588,7 @@
  background-position: 54% 51%;
 }*/
 .menu:before {
-    content: "\E5D2";
+    content: "\E8EE";
 }
 
 /*.previous {
