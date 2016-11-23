@@ -7,7 +7,7 @@
         
     $(window).scroll(function () {
         var screenWidth = $(window).width();
-        if (screenWidth > 767) {
+        if (screenWidth > 991) {
             var topHeight = activeHeight - $(document).scrollTop(),
                 scale = topHeight / activeHeight,
                 currPadding = padding,
