@@ -485,8 +485,6 @@
     <Content Include="Views\Orchestra\Index.cshtml" />
     <Content Include="Views\Lessons\Feedback.cshtml" />
     <Content Include="Views\Mediya\PhotoPart.cshtml" />
-    <Content Include="Views\Mediya\Audio.cshtml" />
-    <Content Include="Views\Mediya\Video.cshtml" />
     <Content Include="Views\Orchestra\OrchestraPart.cshtml" />
     <Content Include="Views\Lessons\LessonPart.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />

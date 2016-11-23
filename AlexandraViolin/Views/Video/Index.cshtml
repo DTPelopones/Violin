@@ -9,61 +9,17 @@
     @Styles.Render("~/bundles/css/violin")
 }
 
-@section head
-{
-    @*@Scripts.Render("~/bundles/medi")*@
-    @*@Scripts.Render("~/bundles/jqueryunobtrusiveajax")*@
-}
-
-@*<h1 class="page-header">
-        Медиа
-    </h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                @Html.Partial("Album")
-            </div>
-         </div>
-    </div>
-    <hr/>*@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
                 Видео
             </h1>
-            @*<ol class="breadcrumb">
-                    <li>
-                        @Html.ActionLink("Главная", "Index", "Home")<span class="divider">/</span>
-                    </li>
-                    <li class="active">Медиа</li>
-                </ol>*@
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
-            @*<ul class="nav nav-tabs" id="mediaTab" role="tablist">
-                    <li class="active">
-                        <a data-toggle="tab" role="tab" href="#Album">Фото</a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" role="tab" href="#Video">Видео</a>
-                    </li>
-                    <li>
-                        <a data-toggle="tab" role="tab" href="#Audio">Аудио</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="mediaTabContent">
-                    <div id="Album" class="tab-pane in active">*@
             @Html.Partial("Video")
-            @*</div>
-                <div id="Video" class="tab-pane">
-                    @Html.Partial("Video")
-                </div>
-                <div id="Audio" class="tab-pane">
-                    @Html.Partial("Audio")
-                </div>*@
-            @*</div>*@
         </div>
     </div>
 </div>
