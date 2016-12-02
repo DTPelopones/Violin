@@ -305,7 +305,7 @@ only screen and (                min-resolution: 2dppx) {
 
 .yesp .yesp-time {
     float: left;
-    width: 40px;
+    /*width: 40px;*/
     font-size: 9px;
     color: #fff;
     font-weight: 700;
