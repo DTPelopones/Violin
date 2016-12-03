@@ -13,13 +13,13 @@ namespace AlexandraViolin.ScriptHelpers
         public LicensedStyleBundle(string virtualPath)
             : base(virtualPath)
         {
-            this.Builder = new LicencedStyleBuilder();
+            this.Builder = new LicencedStyleBuilder(); 
         }
 
         public LicensedStyleBundle(string virtualPath, string cdnPath)
             : base(virtualPath, cdnPath)
         {
-            this.Builder = new LicencedStyleBuilder();
+            this.Builder = new LicencedStyleBuilder(); 
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
-using AlexandraViolin.ScriptHelpers; 
+using AlexandraViolin.ScriptHelpers;
+using AlexandraViolin.Extensions; 
 
 namespace AlexandraViolin
 {
@@ -69,19 +70,10 @@ namespace AlexandraViolin
                     "~/Scripts/soundmanager2-nodebug-jsmin.js"
                     ));
 
-            LicensedStyleBundle photoswipecss = new LicensedStyleBundle("~/bundles/photoswipecss");
-
-            photoswipecss.Include(
-                      "~/PhotoSwipe/photoswipe.css",
-                      new CssRewriteUrlTransform()
-                      );
-
-            photoswipecss.Include(
-                      "~/PhotoSwipe/default-skin/default-skin.css",
-                      new CssRewriteUrlTransform()
-                      );
-
-            bundles.Add(photoswipecss);
+            bundles.Add(new LicensedStyleBundle("~/bundles/photoswipecss").IncludeWithCssRewriteUrlTransform(
+                        "~/PhotoSwipe/photoswipe.css", 
+                        "~/PhotoSwipe/default-skin/default-skin.css" 
+                      ));
 
             bundles.Add(new LicensedStyleBundle("~/bundles/css").Include(
                       "~/css/bootstrap.css",
@@ -89,45 +81,29 @@ namespace AlexandraViolin
                       "~/css/bootstrap-social.css"
                       ));
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css/violin").Include(
-                      "~/css/violin.css",
-                      new CssRewriteUrlTransform()
-                      ));
+            bundles.Add(new LicensedStyleBundle("~/bundles/css/violin").IncludeWithCssRewriteUrlTransform( 
+                      "~/css/violin.css" 
+                      )); 
 
-            LicensedStyleBundle videocss = new LicensedStyleBundle("~/bundles/css/videocss");
-
-            videocss.Include(
-                      "~/css/youtube-video-player.css",
-                      new CssRewriteUrlTransform()
-                      );
-
-            videocss.Include(
-                      "~/css/perfect-scrollbar.css",
-                      new CssRewriteUrlTransform()
-                      );
-
-            videocss.Include(
-                      "~/css/jquery.powertip-dark.css",
-                      new CssRewriteUrlTransform()
-                      );
-
-            bundles.Add(videocss);
+            bundles.Add(new LicensedStyleBundle("~/bundles/css/videocss").IncludeWithCssRewriteUrlTransform( 
+                        "~/css/youtube-video-player.css", 
+                        "~/css/perfect-scrollbar.css", 
+                        "~/css/jquery.powertip-dark.css" 
+                    )); 
 
             bundles.Add(new LicensedStyleBundle("~/bundles/css/material-icons", "https://fonts.googleapis.com/icon?family=Material+Icons")
                         .Include(
                         "~/css/material-icons-debug.css"
                       ));
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css/bar-ui").Include(
-                      "~/css/bar-ui.css",
-                      new CssRewriteUrlTransform()
+            bundles.Add(new LicensedStyleBundle("~/bundles/css/bar-ui").IncludeWithCssRewriteUrlTransform(
+                      "~/css/bar-ui.css"
                       ));
 
             if (!HttpContext.Current.IsDebuggingEnabled)
             {
                 BundleTable.EnableOptimizations = true;
             }
-
         }
     }
 }
