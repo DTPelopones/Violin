@@ -11,24 +11,24 @@ namespace AlexandraViolin
         {
             BundleTable.Bundles.UseCdn = true;
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jquery", "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryjs", "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
                         .Include(
                         "~/Scripts/jquery-1.7.2.min.js"
                         )); 
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/ajax", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/ajaxjs", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
                         "~/Scripts/jquery.unobtrusive-ajax.min.js" 
                         ));  
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryvalidate").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryvalidatejs").Include(
                         "~/Scripts/jquery.validate.min.js"
                         )); 
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryunobtrusiveajax", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryunobtrusiveajaxjs", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
                         "~/Scripts/jquery.unobtrusive-ajax.min.js"
                         ));
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryvalidateunobtrusive", "http://ajax.aspnetcdn.com/ajax/mvc/5.0/jquery.validate.unobtrusive.min.js").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryvalidateunobtrusivejs", "http://ajax.aspnetcdn.com/ajax/mvc/5.0/jquery.validate.unobtrusive.min.js").Include(
                         "~/Scripts/jquery.validate.unobtrusive.min.js"
                         ));
 
@@ -38,11 +38,11 @@ namespace AlexandraViolin
                         )
                         );
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/violin").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/violinjs").Include(
                         "~/js/violin.js"
                         ));
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/medi").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/medijs").Include(
                         "~/js/medi.js"
                         ));
 
@@ -62,11 +62,11 @@ namespace AlexandraViolin
                         "~/js/jquery.powertip.js"
                         ));
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/bar-ui").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/bar-uijs").Include(
                     "~/Scripts/bar-ui.js"
                     ));
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/soundmanager2").Include(
+            bundles.Add(new LicensedScriptBundle("~/bundles/soundmanager2js").Include(
                     "~/Scripts/soundmanager2-nodebug-jsmin.js"
                     ));
 
@@ -75,28 +75,28 @@ namespace AlexandraViolin
                         "~/PhotoSwipe/default-skin/default-skin.css" 
                       ));
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css").Include(
+            bundles.Add(new LicensedStyleBundle("~/bundles/css").IncludeWithCssRewriteUrlTransform(
                       "~/css/bootstrap.css",
                       "~/css/modern-business.css", 
                       "~/css/bootstrap-social.css"
                       ));
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css/violin").IncludeWithCssRewriteUrlTransform( 
+            bundles.Add(new LicensedStyleBundle("~/bundles/violincss").IncludeWithCssRewriteUrlTransform( 
                       "~/css/violin.css" 
                       )); 
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css/videocss").IncludeWithCssRewriteUrlTransform( 
+            bundles.Add(new LicensedStyleBundle("~/bundles/videocss").IncludeWithCssRewriteUrlTransform( 
                         "~/css/youtube-video-player.css", 
                         "~/css/perfect-scrollbar.css", 
                         "~/css/jquery.powertip-dark.css" 
                     )); 
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css/material-icons", "https://fonts.googleapis.com/icon?family=Material+Icons")
-                        .Include(
+            bundles.Add(new LicensedStyleBundle("~/bundles/material-iconscss", "https://fonts.googleapis.com/icon?family=Material+Icons")
+                        .IncludeWithCssRewriteUrlTransform(
                         "~/css/material-icons-debug.css"
                       ));
 
-            bundles.Add(new LicensedStyleBundle("~/bundles/css/bar-ui").IncludeWithCssRewriteUrlTransform(
+            bundles.Add(new LicensedStyleBundle("~/bundles/bar-uicss").IncludeWithCssRewriteUrlTransform(
                       "~/css/bar-ui.css"
                       ));
 
