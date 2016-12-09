@@ -21,6 +21,8 @@
 
     @Styles.Render("~/bundles/css")
 
+    @Styles.Render("~/bundles/violincss")
+
     @Scripts.Render("~/bundles/jqueryjs")
     @Scripts.Render("~/bundles/bootstrapjs")
     @Scripts.Render("~/bundles/violinjs")
@@ -31,7 +33,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav id="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -40,13 +42,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
-                @Html.ActionLink("AF", "Index", new { controller = "Home" }, new { @class = "navbar-brand" })
+
+                @Html.ActionLink("AF", "Index", new { controller = "Home" }, new { id = "header-inner-logo", @style = "background: transparent;", @class = "navbar-brand" })
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li id="biography" class="@IsMenuSelected("Index", "Biography", "active")">
-                       @Html.ActionLink("ОБО МНЕ", "Index", "Biography")
+                        @Html.ActionLink("ОБО МНЕ", "Index", "Biography")
                     </li>
                     <li id="afisha" class="@IsMenuSelected("Index", "Afisha", "active")">
                         @Html.ActionLink("АФИША", "Index", "Afisha")
@@ -76,10 +78,8 @@
             </div>
         </div>
     </nav>
-
     @RenderBody()
- 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter40818899 = new Ya.Metrika({ id:40818899, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40818899" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->   
+    <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function () { try { w.yaCounter40818899 = new Ya.Metrika({ id: 40818899, clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true }); } catch (e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/40818899" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
 </body>
 </html>
