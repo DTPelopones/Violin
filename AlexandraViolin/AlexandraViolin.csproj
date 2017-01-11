@@ -210,6 +210,10 @@
     <Content Include="App_Data\SQL\fn_login.sql" />
     <Content Include="img\Afisha\20161224.jpg" />
     <Content Include="img\Afisha\20161224m.jpg" />
+    <Content Include="img\Afisha\20170114.jpg" />
+    <Content Include="img\Afisha\20170114m.jpg" />
+    <Content Include="img\Afisha\20170215.jpg" />
+    <Content Include="img\Afisha\20170215m.jpg" />
     <Content Include="img\audio\entypo-25px-ffffff\PNG\arrow.png" />
     <Content Include="img\audio\entypo-25px-ffffff\PNG\cart.png" />
     <Content Include="img\audio\entypo-25px-ffffff\PNG\first.png" />
