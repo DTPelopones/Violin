@@ -215,3 +215,9 @@ ModelManifest.xml
 /AlexandraViolin/audio/Bach Concerto for two violins 1 and 2 parts Igor Frolov  Aleksandra Fedotova chamber orchestra Moscow camerata 2003.mov
 /AlexandraViolin/audio/16.mp3
 /AlexandraViolin/audio/15.mp3
+
+AlexandraViolin/App_Start/NinjectWebCommon.cs
+AlexandraViolin/Properties/PublishProfiles/PRODUCT.pubxml
+AlexandraViolin/Controllers/BaseController.cs
+*.pubxml
+/AlexandraViolin/Tracks

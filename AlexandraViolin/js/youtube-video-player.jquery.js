@@ -729,6 +729,7 @@
             } else if (state == 1 || state == 3) {
                 // playing or buffering
                 base.$controls['play'].removeClass('yesp-icon-play').addClass('yesp-icon-pause').removeClass('yesp-icon-undo');
+                $('.ytp-pause-overlay').hide(); 
             } else if (state == 2) {
                 // paused
                 base.$controls['play'].addClass('yesp-icon-play').removeClass('yesp-icon-pause').removeClass('yesp-icon-undo');

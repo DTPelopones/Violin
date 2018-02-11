@@ -836,3 +836,7 @@ only screen and (                min-resolution: 2dppx) {
 .yesp-icon-youtube-play:before {
 	content: "\E064";
 }
+
+.ytp-pause-overlay {
+    display: none!important;
+} 

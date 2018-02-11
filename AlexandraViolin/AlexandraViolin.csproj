@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -39,6 +41,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +60,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -212,8 +216,20 @@
     <Content Include="img\Afisha\20161224m.jpg" />
     <Content Include="img\Afisha\20170114.jpg" />
     <Content Include="img\Afisha\20170114m.jpg" />
-    <Content Include="img\Afisha\20170215.jpg" />
-    <Content Include="img\Afisha\20170215m.jpg" />
+    <Content Include="img\Afisha\20170517.jpg" />
+    <Content Include="img\Afisha\20170517m.jpg" />
+    <Content Include="img\Afisha\20170519.jpg" />
+    <Content Include="img\Afisha\20170519m.jpg" />
+    <Content Include="img\Afisha\20171013.jpg" />
+    <Content Include="img\Afisha\20171013m.jpg" />
+    <Content Include="img\Afisha\20171025.jpg" />
+    <Content Include="img\Afisha\20171025m.jpg" />
+    <Content Include="img\Afisha\20171209.jpg" />
+    <Content Include="img\Afisha\20171209m.jpg" />
+    <Content Include="img\Afisha\20171231.jpg" />
+    <Content Include="img\Afisha\20171231m.jpg" />
+    <Content Include="img\Afisha\20180304.jpg" />
+    <Content Include="img\Afisha\20180304m.jpg" />
     <Content Include="img\audio\entypo-25px-ffffff\PNG\arrow.png" />
     <Content Include="img\audio\entypo-25px-ffffff\PNG\cart.png" />
     <Content Include="img\audio\entypo-25px-ffffff\PNG\first.png" />
@@ -241,6 +257,7 @@
     <Content Include="img\audio\entypo-25px-ffffff\SVG\spinner.svg" />
     <Content Include="img\audio\entypo-25px-ffffff\SVG\volume.svg" />
     <Content Include="img\brand.svg" />
+    <Content Include="Tracks\Moon River.wav" />
     <Content Include="Tracks\Wega Violins.mp3" />
     <Content Include="Tracks\Сырба.mp3" />
     <Content Include="css\bar-ui.css" />
@@ -459,7 +476,7 @@
     <Content Include="js\violin.js" />
     <Content Include="Tracks\Wega Violins.ogg" />
     <Content Include="Tracks\Сырба.ogg" />
-    <None Include="Properties\PublishProfiles\FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\PRODUCT.pubxml" />
     <None Include="Properties\PublishProfiles\Publisher.pubxml" />
     <Content Include="js\youtube-video-player.jquery.js" />
     <Content Include="PhotoSwipe\default-skin\default-skin.css" />
