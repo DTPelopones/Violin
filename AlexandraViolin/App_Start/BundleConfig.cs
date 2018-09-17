@@ -16,21 +16,31 @@ namespace AlexandraViolin
                         "~/Scripts/jquery-1.7.2.min.js"
                         )); 
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/ajaxjs", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
-                        "~/Scripts/jquery.unobtrusive-ajax.min.js" 
-                        ));  
+            bundles.Add(
+                        //new LicensedScriptBundle("~/bundles/ajaxjs", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
+                        new LicensedScriptBundle("~/bundles/ajaxjs").Include(
+                        "~/Scripts/jquery.unobtrusive-ajax.min.js"
+                        )
+                        //)
+                        );  
 
             bundles.Add(new LicensedScriptBundle("~/bundles/jqueryvalidatejs").Include(
                         "~/Scripts/jquery.validate.min.js"
                         )); 
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryunobtrusiveajaxjs", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
+            bundles.Add(//new LicensedScriptBundle("~/bundles/jqueryunobtrusiveajaxjs", "http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.unobtrusive-ajax.min.js").Include(
+                        new LicensedScriptBundle("~/bundles/jqueryunobtrusiveajaxjs").Include(
                         "~/Scripts/jquery.unobtrusive-ajax.min.js"
-                        ));
+                        )
+                        //)
+                        );
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryvalidateunobtrusivejs", "http://ajax.aspnetcdn.com/ajax/mvc/5.0/jquery.validate.unobtrusive.min.js").Include(
+            bundles.Add(//new LicensedScriptBundle("~/bundles/jqueryvalidateunobtrusivejs", "http://ajax.aspnetcdn.com/ajax/mvc/5.0/jquery.validate.unobtrusive.min.js").Include(
+                        new LicensedScriptBundle("~/bundles/jqueryvalidateunobtrusivejs").Include(
                         "~/Scripts/jquery.validate.unobtrusive.min.js"
-                        ));
+                        )
+                        //)
+                        );
 
             bundles.Add(new LicensedScriptBundle("~/bundles/bootstrapjs", "https://yastatic.net/bootstrap/3.1.1/js/bootstrap.min.js")
                         .Include(
