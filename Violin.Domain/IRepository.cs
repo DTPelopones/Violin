@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,8 @@ namespace Violin.Domain
         ICollection SqlQueryMethod(string sql, int id);
         ICollection SqlQueryMethod(string sql, int id, int id1);
         ICollection SqlQueryLogin(string sql, string email, string password);
+
+        int SqlQueryGetInt(string sql); 
 
         #region Lesson
 

@@ -11,9 +11,11 @@ namespace AlexandraViolin
         {
             BundleTable.Bundles.UseCdn = true;
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryjs", "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+            bundles.Add(new LicensedScriptBundle("~/bundles/jqueryjs",
+                            "https://code.jquery.com/jquery-1.10.0.min.js"
+                            )
                         .Include(
-                        "~/Scripts/jquery-1.7.2.min.js"
+                        "~/js/jquery-1.10.0.min.js"
                         )); 
 
             bundles.Add(
@@ -42,10 +44,14 @@ namespace AlexandraViolin
                         //)
                         );
 
-            bundles.Add(new LicensedScriptBundle("~/bundles/bootstrapjs", "https://yastatic.net/bootstrap/3.1.1/js/bootstrap.min.js")
-                        .Include(
-                        "~/js/bootstrap.min.js"
-                        )
+            bundles.Add(//new LicensedScriptBundle("~/bundles/bootstrapjs", "https://yastatic.net/bootstrap/3.1.1/js/bootstrap.min.js")
+                    new LicensedScriptBundle("~/bundles/bootstrapjs")
+                    .Include(
+                            "~/js/moment.min.js",
+                            "~/js/bootstrap.min.js",
+                            "~/js/bootstrap-datetimepicker.min.js",
+                            "~/js/bootstrap-datetimepicker.ru.js"
+                            )
                         );
 
             bundles.Add(new LicensedScriptBundle("~/bundles/violinjs").Include(
@@ -88,7 +94,8 @@ namespace AlexandraViolin
             bundles.Add(new LicensedStyleBundle("~/bundles/css").IncludeWithCssRewriteUrlTransform(
                       "~/css/bootstrap.css",
                       "~/css/modern-business.css", 
-                      "~/css/bootstrap-social.css"
+                      "~/css/bootstrap-social.css",
+                      "~/css/bootstrap-datetimepicker.min.css" 
                       ));
 
             bundles.Add(new LicensedStyleBundle("~/bundles/violincss").IncludeWithCssRewriteUrlTransform( 

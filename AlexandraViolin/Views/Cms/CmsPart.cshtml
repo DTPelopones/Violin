@@ -1,0 +1,6 @@
+﻿@model IEnumerable<Violin.Domain.Photo>
+
+@foreach (Violin.Domain.Photo photo in Model)
+{
+    <div class="date"><b style="color: red">@photo.sort</b> - @photo.eventDay<span>@photo.eventMonthYear</span> - @photo.eventTime - "@photo.eventDesc"</div>
+}

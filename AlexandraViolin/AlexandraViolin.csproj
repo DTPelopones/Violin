@@ -184,6 +184,7 @@
     <Compile Include="Controllers\BiographyController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CmsController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ForumController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -212,6 +213,7 @@
   <ItemGroup>
     <Content Include="App_Data\SQL\CreateLogin.sql" />
     <Content Include="App_Data\SQL\fn_login.sql" />
+    <Content Include="css\bootstrap-datetimepicker.min.css" />
     <Content Include="img\Afisha\20161224.jpg" />
     <Content Include="img\Afisha\20161224m.jpg" />
     <Content Include="img\Afisha\20170114.jpg" />
@@ -281,6 +283,14 @@
     <Content Include="img\audio\entypo-25px-ffffff\SVG\spinner.svg" />
     <Content Include="img\audio\entypo-25px-ffffff\SVG\volume.svg" />
     <Content Include="img\brand.svg" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
+    <Content Include="js\bootstrap-datetimepicker.ru.js" />
+    <Content Include="js\jquery-1.10.0.min.js" />
+    <Content Include="js\moment.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Tracks\Moon River.wav" />
     <Content Include="Tracks\Wega Violins.mp3" />
     <Content Include="Tracks\Сырба.mp3" />
@@ -294,7 +304,6 @@
     <Content Include="css\violin.css" />
     <Content Include="css\youtube-video-player.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\About.jpg" />
     <Content Include="img\Afisha\20120419.jpg" />
@@ -549,6 +558,8 @@
     <Content Include="Views\Video\Video.cshtml" />
     <Content Include="Views\Audio\Audio.cshtml" />
     <Content Include="Views\Audio\Index.cshtml" />
+    <Content Include="Views\Cms\Index.cshtml" />
+    <Content Include="Views\Cms\CmsPart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Backups\" />
@@ -557,13 +568,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />

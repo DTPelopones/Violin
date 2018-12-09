@@ -60,7 +60,7 @@
         <classShapeMoniker Id="b5d6c1b6-6336-43d8-90cd-2765f5903041" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(1.625 : 5.25); (1.625 : 4.70359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.625 : 5.25); (1.625 : 4.70359537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/LessonDataContext/Video/Video_Material" />
       <nodes>
         <classShapeMoniker Id="87f0d336-0ad1-40a0-bd08-21ce4e2045bf" />

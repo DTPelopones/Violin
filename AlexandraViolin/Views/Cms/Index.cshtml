@@ -1,0 +1,105 @@
+﻿@model Violin.Domain.Photo
+
+@{
+    ViewBag.Title = "CMS - Александра Федотова, Московская камерата";
+}
+
+@section metatags
+{
+    <meta name="keywords" content="Александра Федотова, афиша, камерный оркестр, Московская камерата" />
+    <meta name="description" content="CMS - Афиша концертов с участием музыканта и скрипачки Александры Федотовой." />
+    @Styles.Render("~/bundles/violincss")
+}
+
+@section head
+{
+    @Scripts.Render("~/bundles/jqueryunobtrusiveajaxjs")
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    CMS
+                </h1>
+            </div>
+        </div>
+
+        <h3>Выберите Афишу для загрузки в формате .jpg</h3>
+
+        @{Html.RenderAction("CmsPart", "Cms");}
+        <br>
+
+        @using (Html.BeginForm("Upload", "Cms", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="panel-body">
+                @Html.HiddenFor(m => m.ID)
+                @foreach (var property in ViewData.ModelMetadata.Properties)
+                {
+                    switch (property.PropertyName)
+                    {
+                        case "eventDesc":
+                        case "sort": 
+                            <div class="form-group">
+                                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                                @if (property.PropertyName == "Description")
+                                {
+                                    @Html.TextArea(property.PropertyName, null, new { @class = "form-control", rows = 5 })
+                                }
+                                else
+                                {
+                                    @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                                }
+                                @Html.ValidationMessage(property.PropertyName)
+                            </div>
+                            break;
+
+                        case "dateConcert":
+
+                            <div class="form-group">
+                                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                                <div class='input-group date' id='datetimepicker2'>
+
+                                    @Html.TextBoxFor(model => model.dateConcert, new { @class = "form-control" })
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                                @Html.ValidationMessage(property.PropertyName)
+                            </div>
+
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            </div>
+
+
+            <div style="position:relative;">
+                <label id="upload-file-info">Афиша</label>
+                <a class='btn' style="color: #8a989a" href='javascript:;'>
+                    Выберите файл...
+                    <input type="file" name="upload" size="40"
+                           style="position:absolute;z-index:2;top:0;
+                                    left:0;filter: alpha(opacity=0); opacity:0;
+                                    background-color:transparent;color:transparent;"
+                           onchange='$("#upload-file-info").html($(this).val());' />
+                </a>
+
+            </div>
+            <br>
+
+            <input id="submit" type="submit" class="btn btn-primary" value="Загрузить" />
+        }
+    </div>
+<hr>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker2').datetimepicker({
+            locale: 'ru'
+        });
+    });
+</script>

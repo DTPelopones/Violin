@@ -91,6 +91,9 @@
     <Compile Include="SqlRepository\Photo.cs" />
     <Compile Include="SqlRepository\Plan.cs" />
     <Compile Include="SqlRepository\Video.cs" />
+    <Compile Include="ViolinProjectDb.cs">
+      <DependentUpon>ViolinProjectDb.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ViolinProjectDb.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -130,7 +133,6 @@
       <DependentUpon>ViolinProjectDb.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
