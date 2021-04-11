@@ -1794,7 +1794,7 @@
         channel: false,
         user: false,
         videos: false,
-        api_key: 'AIzaSyB9JPwYlFP-LVsm34Qs0c90Mek9FnHGZ-s', // AIzaSyDmk3oxVjtu06AwRv6oADPvcYO9tvswzm8
+        api_key: 'AIzaSyBNL5VCSeTLseI7vkNEyWIQmFLjbqiKUsY', // AIzaSyDmk3oxVjtu06AwRv6oADPvcYO9tvswzm8
         max_results: 50,
         pagination: true, 				// NEW IN 1.1
         continuous: true,
